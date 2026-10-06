@@ -1,6 +1,7 @@
 {
   "version": "2026.1",
   "project": "Qual Presidente é Você?",
+  "projectURL": "https://qual-presidente.netlify.app/",
   "election": {
     "country": "Brasil",
     "year": 2026,

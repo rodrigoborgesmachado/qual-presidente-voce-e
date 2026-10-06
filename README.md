@@ -2,6 +2,8 @@
 
 Quiz inteiramente frontend com React, Vite, JavaScript e React Router. Nenhum cadastro, backend ou API é necessário.
 
+Endereço oficial: https://qual-presidente.netlify.app/. Configurado em `quiz.json` (`projectURL`) para compartilhamento e em `index.html` para URL canônica e Open Graph. Ao mudar de domínio, atualize os dois arquivos.
+
 ## Executar
 
 ```sh
