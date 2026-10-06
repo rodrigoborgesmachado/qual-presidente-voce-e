@@ -1,0 +1,5222 @@
+{
+  "version": "2026.1",
+  "project": "Qual Presidente é Você?",
+  "election": {
+    "country": "Brasil",
+    "year": 2026,
+    "office": "Presidente da República"
+  },
+  "methodology": {
+    "basis": "Propostas extraídas dos planos de governo fornecidos para o projeto.",
+    "unknownPolicy": "Quando o plano não sustenta uma posição, o candidato não recebe nem perde pontos naquela associação.",
+    "neutralAnswer": "A aplicação deve adicionar ou preservar a opção 'Não sei / Não tenho opinião', que nunca gera pontos.",
+    "matchWeights": {
+      "1.0": "posição diretamente representada",
+      "0.75": "posição muito próxima, com diferença de intensidade ou instrumento",
+      "0.5": "compatibilidade parcial relevante",
+      "0.25": "compatibilidade fraca mas substantiva; uso excepcional"
+    },
+    "candidatePercentage": "Normalizar a pontuação por candidato somente pelas questões em que exista posição documentada comparável para ele.",
+    "tieBreakers": [
+      "maior quantidade de matches com peso 1.0",
+      "maior pontuação nas questões simple e moderate",
+      "persistindo empate, apresentar empate"
+    ]
+  },
+  "quizModes": {
+    "quick": {
+      "name": "Rápido",
+      "description": "Uma comparação rápida sobre temas centrais.",
+      "questionCount": 10,
+      "levels": [
+        "simple"
+      ]
+    },
+    "balanced": {
+      "name": "Equilibrado",
+      "description": "Uma análise mais abrangente, misturando temas centrais e específicos.",
+      "questionCount": 20,
+      "levels": [
+        "simple",
+        "moderate"
+      ]
+    },
+    "complete": {
+      "name": "Completo",
+      "description": "Uma comparação detalhada entre suas opiniões e as propostas dos candidatos.",
+      "questionCount": 40,
+      "levels": [
+        "simple",
+        "moderate",
+        "complete"
+      ]
+    }
+  },
+  "categories": [
+    {
+      "id": "economy",
+      "name": "Economia"
+    },
+    {
+      "id": "taxes",
+      "name": "Impostos"
+    },
+    {
+      "id": "labor",
+      "name": "Emprego e Trabalho"
+    },
+    {
+      "id": "pensions",
+      "name": "Previdência"
+    },
+    {
+      "id": "education",
+      "name": "Educação"
+    },
+    {
+      "id": "health",
+      "name": "Saúde"
+    },
+    {
+      "id": "security",
+      "name": "Segurança Pública"
+    },
+    {
+      "id": "social_policy",
+      "name": "Políticas Sociais"
+    },
+    {
+      "id": "housing",
+      "name": "Habitação"
+    },
+    {
+      "id": "public_transport",
+      "name": "Transporte Público"
+    },
+    {
+      "id": "infrastructure",
+      "name": "Infraestrutura"
+    },
+    {
+      "id": "agriculture",
+      "name": "Agricultura e Reforma Agrária"
+    },
+    {
+      "id": "environment",
+      "name": "Meio Ambiente"
+    },
+    {
+      "id": "energy",
+      "name": "Energia e Recursos Naturais"
+    },
+    {
+      "id": "technology",
+      "name": "Ciência, Tecnologia e IA"
+    },
+    {
+      "id": "public_administration",
+      "name": "Administração Pública"
+    },
+    {
+      "id": "democracy_and_institutions",
+      "name": "Instituições e Democracia"
+    },
+    {
+      "id": "civil_rights",
+      "name": "Direitos Civis"
+    },
+    {
+      "id": "foreign_policy",
+      "name": "Política Externa"
+    },
+    {
+      "id": "culture",
+      "name": "Cultura e Sociedade"
+    }
+  ],
+  "candidates": [
+    {
+      "id": "clariana-barao",
+      "name": "Clariana Barão",
+      "displayName": "Clariana",
+      "party": null,
+      "partyNumber": null,
+      "imageUrl": "https://sunsale-static-files.s3.us-east-1.amazonaws.com/politics/clariana.jpg",
+      "color": "#6B7280",
+      "website": null,
+      "propostaUrl": "https://sunsale-static-files.s3.us-east-1.amazonaws.com/politics/CLARIANA+BARAO.pdf"
+    },
+    {
+      "id": "edmilson-costa",
+      "name": "Edmilson Costa",
+      "displayName": "Edmilson",
+      "party": "PCB",
+      "partyNumber": null,
+      "imageUrl": "https://sunsale-static-files.s3.us-east-1.amazonaws.com/politics/edmilson.png",
+      "color": "#6B7280",
+      "website": null,
+      "propostaUrl": "https://sunsale-static-files.s3.us-east-1.amazonaws.com/politics/EDMILSON+COSTA.pdf"
+    },
+    {
+      "id": "augusto-cury",
+      "name": "Augusto Cury",
+      "displayName": "Augusto Cury",
+      "party": null,
+      "partyNumber": null,
+      "imageUrl": "https://sunsale-static-files.s3.us-east-1.amazonaws.com/politics/augusto.png",
+      "color": "#6B7280",
+      "website": null,
+      "propostaUrl": "https://sunsale-static-files.s3.us-east-1.amazonaws.com/politics/ESCRITOR+AUGUSTO+CURY.pdf"
+    },
+    {
+      "id": "flavio-bolsonaro",
+      "name": "Flávio Bolsonaro",
+      "displayName": "Flávio Bolsonaro",
+      "party": null,
+      "partyNumber": 22,
+      "imageUrl": "https://sunsale-static-files.s3.us-east-1.amazonaws.com/politics/flavio.png",
+      "color": "#6B7280",
+      "website": null,
+      "propostaUrl": "https://sunsale-static-files.s3.us-east-1.amazonaws.com/politics/FLAVIO+BOLSONARO.pdf"
+    },
+    {
+      "id": "hertz-dias",
+      "name": "Hertz Dias",
+      "displayName": "Hertz Dias",
+      "party": "PSTU",
+      "partyNumber": null,
+      "imageUrl": "https://sunsale-static-files.s3.us-east-1.amazonaws.com/politics/hertz.png",
+      "color": "#6B7280",
+      "website": null,
+      "propostaUrl": "https://sunsale-static-files.s3.us-east-1.amazonaws.com/politics/HERTZ+DIAS.pdf"
+    },
+    {
+      "id": "leonardo-avalanche",
+      "name": "Leonardo Avalanche",
+      "displayName": "Leonardo Avalanche",
+      "party": "PRTB",
+      "partyNumber": null,
+      "imageUrl": "https://sunsale-static-files.s3.us-east-1.amazonaws.com/politics/leonardo.jpeg",
+      "color": "#6B7280",
+      "website": null,
+      "propostaUrl": "https://sunsale-static-files.s3.us-east-1.amazonaws.com/politics/LEONARDO+AVALANCHE.pdf"
+    },
+    {
+      "id": "lula",
+      "name": "Luiz Inácio Lula da Silva",
+      "displayName": "Lula",
+      "party": "PT",
+      "partyNumber": 13,
+      "imageUrl": "https://sunsale-static-files.s3.us-east-1.amazonaws.com/politics/lula.png",
+      "color": "#6B7280",
+      "website": null,
+      "propostaUrl": "https://sunsale-static-files.s3.us-east-1.amazonaws.com/politics/LULA.pdf"
+    },
+    {
+      "id": "renan-santos",
+      "name": "Renan Santos",
+      "displayName": "Renan Santos",
+      "party": "Missão",
+      "partyNumber": null,
+      "imageUrl": "https://sunsale-static-files.s3.us-east-1.amazonaws.com/politics/renan.png",
+      "color": "#6B7280",
+      "website": null,
+      "propostaUrl": "https://sunsale-static-files.s3.us-east-1.amazonaws.com/politics/RENAN+SANTOS.pdf"
+    },
+    {
+      "id": "ronaldo-caiado",
+      "name": "Ronaldo Caiado",
+      "displayName": "Ronaldo Caiado",
+      "party": "PSD",
+      "partyNumber": null,
+      "imageUrl": "https://sunsale-static-files.s3.us-east-1.amazonaws.com/politics/caiado.png",
+      "color": "#6B7280",
+      "website": null,
+      "propostaUrl": "https://sunsale-static-files.s3.us-east-1.amazonaws.com/politics/RONALDO+CAIADO.pdf"
+    },
+    {
+      "id": "rui-costa-pimenta",
+      "name": "Rui Costa Pimenta",
+      "displayName": "Rui Costa Pimenta",
+      "party": "PCO",
+      "partyNumber": null,
+      "imageUrl": "https://sunsale-static-files.s3.us-east-1.amazonaws.com/politics/rui.jpg",
+      "color": "#6B7280",
+      "website": null,
+      "propostaUrl": "https://sunsale-static-files.s3.us-east-1.amazonaws.com/politics/RUI+COSTA+PIMENTA.pdf"
+    },
+    {
+      "id": "samara-martins",
+      "name": "Samara Martins",
+      "displayName": "Samara Martins",
+      "party": "UP",
+      "partyNumber": null,
+      "imageUrl": "https://sunsale-static-files.s3.us-east-1.amazonaws.com/politics/samara.png",
+      "color": "#6B7280",
+      "website": null,
+      "propostaUrl": "https://sunsale-static-files.s3.us-east-1.amazonaws.com/politics/SAMARA.pdf"
+    },
+    {
+      "id": "wilson-grassi",
+      "name": "Wilson Grassi",
+      "displayName": "Wilson Grassi",
+      "party": "Democrata",
+      "partyNumber": 35,
+      "imageUrl": "https://sunsale-static-files.s3.us-east-1.amazonaws.com/politics/VETERINÁRIO+WILSON+GRASSI.png",
+      "color": "#6B7280",
+      "website": null,
+      "propostaUrl": "https://sunsale-static-files.s3.us-east-1.amazonaws.com/politics/VETERINÁRIO+WILSON+GRASSI.pdf"
+    },
+    {
+      "id": "romeu-zema",
+      "name": "Romeu Zema",
+      "displayName": "Romeu Zema",
+      "party": null,
+      "partyNumber": null,
+      "imageUrl": "https://sunsale-static-files.s3.us-east-1.amazonaws.com/politics/zema.png",
+      "color": "#6B7280",
+      "website": null,
+      "propostaUrl": "https://sunsale-static-files.s3.us-east-1.amazonaws.com/politics/ZEMA.pdf"
+    }
+  ],
+  "questions": [
+    {
+      "id": "q01_state_companies",
+      "category": "economy",
+      "subaxis": "state_owned_companies",
+      "level": "simple",
+      "weight": 1.0,
+      "question": "Qual deve ser o papel das empresas estatais na economia?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Privatizar amplamente as empresas estatais e reduzir a atuação direta do Estado na economia.",
+          "matches": [
+            {
+              "candidateId": "romeu-zema",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Manter uma economia mista, combinando empresas públicas, investimento estatal e iniciativa privada.",
+          "matches": [
+            {
+              "candidateId": "lula",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Reestatizar ou colocar setores estratégicos sob controle público.",
+          "matches": [
+            {
+              "candidateId": "edmilson-costa",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "samara-martins",
+              "weight": 0.9
+            }
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Ir além da estatização e colocar setores estratégicos sob controle direto dos trabalhadores.",
+          "matches": [
+            {
+              "candidateId": "hertz-dias",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "rui-costa-pimenta",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "edmilson-costa",
+              "weight": 0.75
+            }
+          ]
+        },
+        {
+          "id": "neutral",
+          "text": "Não sei / Não tenho opinião",
+          "matches": []
+        }
+      ],
+      "sources": [
+        {
+          "candidateId": "romeu-zema",
+          "document": "ZEMA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "lula",
+          "document": "LULA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "edmilson-costa",
+          "document": "EDMILSON COSTA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "samara-martins",
+          "document": "SAMARA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "hertz-dias",
+          "document": "HERTZ DIAS.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "rui-costa-pimenta",
+          "document": "RUI COSTA PIMENTA.pdf",
+          "page": null
+        }
+      ]
+    },
+    {
+      "id": "q02_tax_model",
+      "category": "taxes",
+      "subaxis": "tax_model",
+      "level": "simple",
+      "weight": 1.0,
+      "question": "Qual caminho para os impostos mais se aproxima do que você defende?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Cobrar proporcionalmente mais de altas rendas, lucros, dividendos e/ou grandes fortunas, aliviando trabalhadores e consumo.",
+          "matches": [
+            {
+              "candidateId": "edmilson-costa",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "hertz-dias",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "lula",
+              "weight": 0.85
+            },
+            {
+              "candidateId": "samara-martins",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Substituir vários tributos por um imposto único de alíquota baixa e simples.",
+          "matches": [
+            {
+              "candidateId": "leonardo-avalanche",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Criar um imposto federal automático sobre movimentações financeiras para substituir diversos tributos federais.",
+          "matches": [
+            {
+              "candidateId": "wilson-grassi",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Reduzir gradualmente a carga tributária conforme o governo também reduz seus gastos.",
+          "matches": [
+            {
+              "candidateId": "romeu-zema",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "augusto-cury",
+              "weight": 0.6
+            },
+            {
+              "candidateId": "flavio-bolsonaro",
+              "weight": 0.6
+            }
+          ]
+        },
+        {
+          "id": "neutral",
+          "text": "Não sei / Não tenho opinião",
+          "matches": []
+        }
+      ],
+      "sources": [
+        {
+          "candidateId": "edmilson-costa",
+          "document": "EDMILSON COSTA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "hertz-dias",
+          "document": "HERTZ DIAS.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "lula",
+          "document": "LULA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "samara-martins",
+          "document": "SAMARA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "leonardo-avalanche",
+          "document": "LEONARDO AVALANCHE.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "wilson-grassi",
+          "document": "VETERINÁRIO WILSON GRASSI.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "romeu-zema",
+          "document": "ZEMA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "augusto-cury",
+          "document": "ESCRITOR AUGUSTO CURY.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "flavio-bolsonaro",
+          "document": "FLAVIO BOLSONARO.pdf",
+          "page": null
+        }
+      ]
+    },
+    {
+      "id": "q03_workweek",
+      "category": "labor",
+      "subaxis": "workweek",
+      "level": "simple",
+      "weight": 1.0,
+      "question": "Sobre a jornada semanal de trabalho, qual proposta mais se aproxima da sua opinião?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Reduzir para cerca de 30 horas semanais, sem redução salarial.",
+          "matches": [
+            {
+              "candidateId": "edmilson-costa",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "samara-martins",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "rui-costa-pimenta",
+              "weight": 0.7
+            },
+            {
+              "candidateId": "hertz-dias",
+              "weight": 0.6
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Reduzir para aproximadamente 35 ou 36 horas semanais, sem redução salarial.",
+          "matches": [
+            {
+              "candidateId": "rui-costa-pimenta",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "hertz-dias",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "edmilson-costa",
+              "weight": 0.65
+            },
+            {
+              "candidateId": "samara-martins",
+              "weight": 0.65
+            },
+            {
+              "candidateId": "lula",
+              "weight": 0.5
+            }
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Reduzir para 40 horas semanais, sem redução salarial.",
+          "matches": [
+            {
+              "candidateId": "lula",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "hertz-dias",
+              "weight": 0.5
+            },
+            {
+              "candidateId": "rui-costa-pimenta",
+              "weight": 0.4
+            }
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Não considero uma redução geral da jornada uma prioridade.",
+          "matches": []
+        },
+        {
+          "id": "neutral",
+          "text": "Não sei / Não tenho opinião",
+          "matches": []
+        }
+      ],
+      "sources": [
+        {
+          "candidateId": "edmilson-costa",
+          "document": "EDMILSON COSTA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "samara-martins",
+          "document": "SAMARA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "rui-costa-pimenta",
+          "document": "RUI COSTA PIMENTA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "hertz-dias",
+          "document": "HERTZ DIAS.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "lula",
+          "document": "LULA.pdf",
+          "page": null
+        }
+      ]
+    },
+    {
+      "id": "q04_social_assistance",
+      "category": "social_policy",
+      "subaxis": "cash_transfer_model",
+      "level": "simple",
+      "weight": 1.0,
+      "question": "Como programas de transferência de renda, como o Bolsa Família, deveriam funcionar?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Devem ser mantidos ou ampliados, combinados com políticas de inclusão produtiva e proteção social.",
+          "matches": [
+            {
+              "candidateId": "lula",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "ronaldo-caiado",
+              "weight": 0.85
+            },
+            {
+              "candidateId": "augusto-cury",
+              "weight": 0.85
+            },
+            {
+              "candidateId": "flavio-bolsonaro",
+              "weight": 0.7
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Devem existir, mas adultos aptos precisam cumprir condições de busca por trabalho, estudo ou qualificação, com incentivo financeiro para sair do programa.",
+          "matches": [
+            {
+              "candidateId": "romeu-zema",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "ronaldo-caiado",
+              "weight": 0.5
+            }
+          ]
+        },
+        {
+          "id": "c",
+          "text": "O modelo de transferência deve ser substituído por frentes de trabalho de interesse público que levem à inserção formal.",
+          "matches": [
+            {
+              "candidateId": "renan-santos",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "id": "d",
+          "text": "A proteção de renda deveria ser muito mais ampla e vinculada a uma transformação estrutural das relações de trabalho e propriedade.",
+          "matches": [
+            {
+              "candidateId": "edmilson-costa",
+              "weight": 0.8
+            },
+            {
+              "candidateId": "hertz-dias",
+              "weight": 0.85
+            },
+            {
+              "candidateId": "rui-costa-pimenta",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "samara-martins",
+              "weight": 0.85
+            }
+          ]
+        },
+        {
+          "id": "neutral",
+          "text": "Não sei / Não tenho opinião",
+          "matches": []
+        }
+      ],
+      "sources": [
+        {
+          "candidateId": "lula",
+          "document": "LULA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "ronaldo-caiado",
+          "document": "RONALDO CAIADO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "augusto-cury",
+          "document": "ESCRITOR AUGUSTO CURY.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "flavio-bolsonaro",
+          "document": "FLAVIO BOLSONARO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "romeu-zema",
+          "document": "ZEMA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "renan-santos",
+          "document": "RENAN SANTOS.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "edmilson-costa",
+          "document": "EDMILSON COSTA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "hertz-dias",
+          "document": "HERTZ DIAS.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "rui-costa-pimenta",
+          "document": "RUI COSTA PIMENTA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "samara-martins",
+          "document": "SAMARA.pdf",
+          "page": null
+        }
+      ]
+    },
+    {
+      "id": "q05_security",
+      "category": "security",
+      "subaxis": "organized_crime_strategy",
+      "level": "simple",
+      "weight": 1.0,
+      "question": "Qual deve ser a principal estratégia contra facções e crime organizado?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Endurecer fortemente penas e encarceramento, classificar facções como terroristas e ampliar estruturas de segurança máxima.",
+          "matches": [
+            {
+              "candidateId": "flavio-bolsonaro",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "romeu-zema",
+              "weight": 0.9
+            },
+            {
+              "candidateId": "ronaldo-caiado",
+              "weight": 0.85
+            },
+            {
+              "candidateId": "renan-santos",
+              "weight": 0.8
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Priorizar inteligência, rastreamento do dinheiro, bloqueio de patrimônio e isolamento das lideranças criminosas.",
+          "matches": [
+            {
+              "candidateId": "wilson-grassi",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "clariana-barao",
+              "weight": 0.9
+            },
+            {
+              "candidateId": "lula",
+              "weight": 0.9
+            },
+            {
+              "candidateId": "ronaldo-caiado",
+              "weight": 0.85
+            },
+            {
+              "candidateId": "romeu-zema",
+              "weight": 0.65
+            }
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Combinar repressão qualificada com retomada territorial, serviços públicos e prevenção social.",
+          "matches": [
+            {
+              "candidateId": "lula",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "ronaldo-caiado",
+              "weight": 0.9
+            },
+            {
+              "candidateId": "clariana-barao",
+              "weight": 0.75
+            },
+            {
+              "candidateId": "augusto-cury",
+              "weight": 0.7
+            }
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Mudar estruturalmente o modelo policial e reduzir encarceramento, enfrentando também as causas sociais da violência.",
+          "matches": [
+            {
+              "candidateId": "edmilson-costa",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "hertz-dias",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "samara-martins",
+              "weight": 0.9
+            },
+            {
+              "candidateId": "rui-costa-pimenta",
+              "weight": 0.75
+            }
+          ]
+        },
+        {
+          "id": "neutral",
+          "text": "Não sei / Não tenho opinião",
+          "matches": []
+        }
+      ],
+      "sources": [
+        {
+          "candidateId": "flavio-bolsonaro",
+          "document": "FLAVIO BOLSONARO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "romeu-zema",
+          "document": "ZEMA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "ronaldo-caiado",
+          "document": "RONALDO CAIADO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "renan-santos",
+          "document": "RENAN SANTOS.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "wilson-grassi",
+          "document": "VETERINÁRIO WILSON GRASSI.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "clariana-barao",
+          "document": "CLARIANA BARAO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "lula",
+          "document": "LULA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "augusto-cury",
+          "document": "ESCRITOR AUGUSTO CURY.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "edmilson-costa",
+          "document": "EDMILSON COSTA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "hertz-dias",
+          "document": "HERTZ DIAS.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "samara-martins",
+          "document": "SAMARA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "rui-costa-pimenta",
+          "document": "RUI COSTA PIMENTA.pdf",
+          "page": null
+        }
+      ]
+    },
+    {
+      "id": "q06_health_model",
+      "category": "health",
+      "subaxis": "health_public_private_role",
+      "level": "simple",
+      "weight": 1.0,
+      "question": "Qual deve ser a relação entre o SUS e o setor privado?",
+      "options": [
+        {
+          "id": "a",
+          "text": "A saúde deve ser integralmente pública, reduzindo ou eliminando a gestão e participação privada no sistema.",
+          "matches": [
+            {
+              "candidateId": "edmilson-costa",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "hertz-dias",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "samara-martins",
+              "weight": 0.85
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "text": "O SUS deve continuar público e universal, mas pode contratar capacidade privada quando isso ajudar a reduzir filas.",
+          "matches": [
+            {
+              "candidateId": "leonardo-avalanche",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "wilson-grassi",
+              "weight": 0.85
+            }
+          ]
+        },
+        {
+          "id": "c",
+          "text": "O sistema público deve usar extensivamente clínicas, hospitais privados, PPPs, concessões e outros modelos de parceria.",
+          "matches": [
+            {
+              "candidateId": "romeu-zema",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "id": "d",
+          "text": "O foco principal deve ser fortalecer a gestão, atenção primária, tecnologia e regionalização do SUS, independentemente de uma disputa público versus privado.",
+          "matches": [
+            {
+              "candidateId": "clariana-barao",
+              "weight": 0.9
+            },
+            {
+              "candidateId": "augusto-cury",
+              "weight": 0.9
+            },
+            {
+              "candidateId": "ronaldo-caiado",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "lula",
+              "weight": 0.85
+            }
+          ]
+        },
+        {
+          "id": "neutral",
+          "text": "Não sei / Não tenho opinião",
+          "matches": []
+        }
+      ],
+      "sources": [
+        {
+          "candidateId": "edmilson-costa",
+          "document": "EDMILSON COSTA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "hertz-dias",
+          "document": "HERTZ DIAS.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "samara-martins",
+          "document": "SAMARA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "leonardo-avalanche",
+          "document": "LEONARDO AVALANCHE.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "wilson-grassi",
+          "document": "VETERINÁRIO WILSON GRASSI.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "romeu-zema",
+          "document": "ZEMA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "clariana-barao",
+          "document": "CLARIANA BARAO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "augusto-cury",
+          "document": "ESCRITOR AUGUSTO CURY.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "ronaldo-caiado",
+          "document": "RONALDO CAIADO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "lula",
+          "document": "LULA.pdf",
+          "page": null
+        }
+      ]
+    },
+    {
+      "id": "q07_housing",
+      "category": "housing",
+      "subaxis": "housing_model",
+      "level": "moderate",
+      "weight": 1.15,
+      "question": "Qual modelo de política habitacional você considera mais adequado?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ampliar produção pública ou social de moradias e usar imóveis sem função social para enfrentar o déficit habitacional.",
+          "matches": [
+            {
+              "candidateId": "hertz-dias",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "samara-martins",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "lula",
+              "weight": 0.75
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Facilitar a compra da casa própria, regularização fundiária e parcerias privadas para ampliar a oferta.",
+          "matches": [
+            {
+              "candidateId": "flavio-bolsonaro",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "renan-santos",
+              "weight": 0.65
+            }
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Usar o histórico de aluguel como prova de capacidade de pagamento e permitir que a família escolha o imóvel financiado.",
+          "matches": [
+            {
+              "candidateId": "wilson-grassi",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Transformar favelas em bairros formais, com títulos individuais, infraestrutura e financiamento habitacional de longo prazo.",
+          "matches": [
+            {
+              "candidateId": "renan-santos",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "id": "neutral",
+          "text": "Não sei / Não tenho opinião",
+          "matches": []
+        }
+      ],
+      "sources": [
+        {
+          "candidateId": "hertz-dias",
+          "document": "HERTZ DIAS.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "samara-martins",
+          "document": "SAMARA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "lula",
+          "document": "LULA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "flavio-bolsonaro",
+          "document": "FLAVIO BOLSONARO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "renan-santos",
+          "document": "RENAN SANTOS.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "wilson-grassi",
+          "document": "VETERINÁRIO WILSON GRASSI.pdf",
+          "page": null
+        }
+      ]
+    },
+    {
+      "id": "q08_police",
+      "category": "security",
+      "subaxis": "police_model",
+      "level": "moderate",
+      "weight": 1.15,
+      "question": "Que mudança no modelo policial mais se aproxima da sua visão?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Desmilitarizar as polícias e avançar para um modelo civil, unificado ou comunitário.",
+          "matches": [
+            {
+              "candidateId": "edmilson-costa",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "hertz-dias",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "samara-martins",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Dissolver a Polícia Militar e substituir o aparato atual por formas de autodefesa e organização popular.",
+          "matches": [
+            {
+              "candidateId": "rui-costa-pimenta",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "hertz-dias",
+              "weight": 0.4
+            }
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Manter as forças existentes, mas aumentar integração, tecnologia, inteligência e coordenação nacional.",
+          "matches": [
+            {
+              "candidateId": "augusto-cury",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "leonardo-avalanche",
+              "weight": 0.9
+            },
+            {
+              "candidateId": "clariana-barao",
+              "weight": 0.8
+            },
+            {
+              "candidateId": "lula",
+              "weight": 0.8
+            }
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Fortalecer a atuação policial e permitir maior integração com as Forças Armadas no combate a facções e retomada de territórios.",
+          "matches": [
+            {
+              "candidateId": "romeu-zema",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "renan-santos",
+              "weight": 0.9
+            },
+            {
+              "candidateId": "ronaldo-caiado",
+              "weight": 0.75
+            }
+          ]
+        },
+        {
+          "id": "neutral",
+          "text": "Não sei / Não tenho opinião",
+          "matches": []
+        }
+      ],
+      "sources": [
+        {
+          "candidateId": "edmilson-costa",
+          "document": "EDMILSON COSTA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "hertz-dias",
+          "document": "HERTZ DIAS.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "samara-martins",
+          "document": "SAMARA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "rui-costa-pimenta",
+          "document": "RUI COSTA PIMENTA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "augusto-cury",
+          "document": "ESCRITOR AUGUSTO CURY.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "leonardo-avalanche",
+          "document": "LEONARDO AVALANCHE.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "clariana-barao",
+          "document": "CLARIANA BARAO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "lula",
+          "document": "LULA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "romeu-zema",
+          "document": "ZEMA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "renan-santos",
+          "document": "RENAN SANTOS.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "ronaldo-caiado",
+          "document": "RONALDO CAIADO.pdf",
+          "page": null
+        }
+      ]
+    },
+    {
+      "id": "q09_agrarian",
+      "category": "agriculture",
+      "subaxis": "agrarian_reform_property",
+      "level": "moderate",
+      "weight": 1.15,
+      "question": "Como o país deveria lidar com concentração de terras e reforma agrária?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Realizar ampla reforma agrária, inclusive com expropriação de grandes propriedades e maior controle coletivo ou público da terra.",
+          "matches": [
+            {
+              "candidateId": "edmilson-costa",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "hertz-dias",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "samara-martins",
+              "weight": 0.9
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Continuar assentamentos, crédito fundiário, regularização e estruturação produtiva da agricultura familiar.",
+          "matches": [
+            {
+              "candidateId": "lula",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Priorizar segurança jurídica da propriedade e produtividade dos assentamentos existentes antes de criar novos.",
+          "matches": [
+            {
+              "candidateId": "renan-santos",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "ronaldo-caiado",
+              "weight": 0.5
+            }
+          ]
+        },
+        {
+          "id": "d",
+          "text": "A prioridade deve ser produtividade, tecnologia e competitividade agrícola, sem colocar reforma agrária ampla no centro da política.",
+          "matches": [
+            {
+              "candidateId": "ronaldo-caiado",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "romeu-zema",
+              "weight": 0.8
+            },
+            {
+              "candidateId": "flavio-bolsonaro",
+              "weight": 0.75
+            }
+          ]
+        },
+        {
+          "id": "neutral",
+          "text": "Não sei / Não tenho opinião",
+          "matches": []
+        }
+      ],
+      "sources": [
+        {
+          "candidateId": "edmilson-costa",
+          "document": "EDMILSON COSTA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "hertz-dias",
+          "document": "HERTZ DIAS.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "samara-martins",
+          "document": "SAMARA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "lula",
+          "document": "LULA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "renan-santos",
+          "document": "RENAN SANTOS.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "ronaldo-caiado",
+          "document": "RONALDO CAIADO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "romeu-zema",
+          "document": "ZEMA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "flavio-bolsonaro",
+          "document": "FLAVIO BOLSONARO.pdf",
+          "page": null
+        }
+      ]
+    },
+    {
+      "id": "q10_platform_work",
+      "category": "labor",
+      "subaxis": "platform_work",
+      "level": "moderate",
+      "weight": 1.15,
+      "question": "Como o trabalho por aplicativos deveria ser tratado?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Criar direitos trabalhistas e previdenciários, regras de remuneração e transparência dos algoritmos.",
+          "matches": [
+            {
+              "candidateId": "lula",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "samara-martins",
+              "weight": 0.9
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Além de direitos e remuneração mínima, estimular aplicativos públicos ou cooperativos controlados pelos próprios trabalhadores.",
+          "matches": [
+            {
+              "candidateId": "samara-martins",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "lula",
+              "weight": 0.55
+            }
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Reduzir taxas cobradas pelas plataformas, financiar veículos para motoristas e criar um aplicativo público concorrente.",
+          "matches": [
+            {
+              "candidateId": "leonardo-avalanche",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Evitar equiparar automaticamente o trabalho em plataformas ao emprego tradicional e priorizar autonomia contratual.",
+          "matches": []
+        },
+        {
+          "id": "neutral",
+          "text": "Não sei / Não tenho opinião",
+          "matches": []
+        }
+      ],
+      "sources": [
+        {
+          "candidateId": "lula",
+          "document": "LULA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "samara-martins",
+          "document": "SAMARA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "leonardo-avalanche",
+          "document": "LEONARDO AVALANCHE.pdf",
+          "page": null
+        }
+      ]
+    },
+    {
+      "id": "q11_ai",
+      "category": "technology",
+      "subaxis": "ai_regulation",
+      "level": "moderate",
+      "weight": 1.15,
+      "question": "Como o Brasil deveria regular a inteligência artificial?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Criar um marco nacional de IA com regras de governança, segurança, direitos e transparência.",
+          "matches": [
+            {
+              "candidateId": "augusto-cury",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "lula",
+              "weight": 0.9
+            },
+            {
+              "candidateId": "clariana-barao",
+              "weight": 0.7
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Regular especialmente os impactos sobre trabalhadores, exigindo transparência algorítmica e participação social ou dos trabalhadores.",
+          "matches": [
+            {
+              "candidateId": "hertz-dias",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "lula",
+              "weight": 0.8
+            },
+            {
+              "candidateId": "samara-martins",
+              "weight": 0.75
+            }
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Evitar uma regulação ampla e precoce; criar regras pontuais quando surgirem danos concretos comprovados.",
+          "matches": [
+            {
+              "candidateId": "romeu-zema",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Priorizar adoção e desenvolvimento da tecnologia no país, com regulação suficiente para segurança sem frear inovação.",
+          "matches": [
+            {
+              "candidateId": "ronaldo-caiado",
+              "weight": 0.9
+            },
+            {
+              "candidateId": "flavio-bolsonaro",
+              "weight": 0.8
+            },
+            {
+              "candidateId": "leonardo-avalanche",
+              "weight": 0.75
+            },
+            {
+              "candidateId": "augusto-cury",
+              "weight": 0.75
+            }
+          ]
+        },
+        {
+          "id": "neutral",
+          "text": "Não sei / Não tenho opinião",
+          "matches": []
+        }
+      ],
+      "sources": [
+        {
+          "candidateId": "augusto-cury",
+          "document": "ESCRITOR AUGUSTO CURY.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "lula",
+          "document": "LULA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "clariana-barao",
+          "document": "CLARIANA BARAO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "hertz-dias",
+          "document": "HERTZ DIAS.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "samara-martins",
+          "document": "SAMARA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "romeu-zema",
+          "document": "ZEMA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "ronaldo-caiado",
+          "document": "RONALDO CAIADO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "flavio-bolsonaro",
+          "document": "FLAVIO BOLSONARO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "leonardo-avalanche",
+          "document": "LEONARDO AVALANCHE.pdf",
+          "page": null
+        }
+      ]
+    },
+    {
+      "id": "q12_abortion",
+      "category": "civil_rights",
+      "subaxis": "abortion",
+      "level": "moderate",
+      "weight": 1.15,
+      "question": "Sobre a legislação do aborto, qual posição mais se aproxima da sua?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Descriminalizar e garantir aborto legal e seguro pelo sistema público de saúde.",
+          "matches": [
+            {
+              "candidateId": "hertz-dias",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "samara-martins",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Manter uma orientação de proteção à vida desde a concepção.",
+          "matches": [
+            {
+              "candidateId": "flavio-bolsonaro",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Prefiro manter a legislação atual sem ampliar nem restringir de forma relevante.",
+          "matches": []
+        },
+        {
+          "id": "d",
+          "text": "Não tenho posição definida sobre o tema.",
+          "matches": []
+        }
+      ],
+      "sources": [
+        {
+          "candidateId": "hertz-dias",
+          "document": "HERTZ DIAS.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "samara-martins",
+          "document": "SAMARA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "flavio-bolsonaro",
+          "document": "FLAVIO BOLSONARO.pdf",
+          "page": null
+        }
+      ]
+    },
+    {
+      "id": "q13_drugs",
+      "category": "security",
+      "subaxis": "drug_policy",
+      "level": "moderate",
+      "weight": 1.15,
+      "question": "Qual deveria ser a direção da política brasileira sobre drogas?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Encerrar a guerra às drogas e tratar o consumo prioritariamente como questão de saúde pública.",
+          "matches": [
+            {
+              "candidateId": "hertz-dias",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "samara-martins",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "edmilson-costa",
+              "weight": 0.85
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Descriminalizar o uso e avançar também na legalização da maconha.",
+          "matches": [
+            {
+              "candidateId": "edmilson-costa",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "hertz-dias",
+              "weight": 0.75
+            },
+            {
+              "candidateId": "samara-martins",
+              "weight": 0.7
+            }
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Manter a proibição, mas priorizar tratamento e prevenção para usuários e repressão ao tráfico.",
+          "matches": []
+        },
+        {
+          "id": "d",
+          "text": "Endurecer a repressão tanto ao tráfico quanto à circulação de drogas.",
+          "matches": []
+        },
+        {
+          "id": "neutral",
+          "text": "Não sei / Não tenho opinião",
+          "matches": []
+        }
+      ],
+      "sources": [
+        {
+          "candidateId": "hertz-dias",
+          "document": "HERTZ DIAS.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "samara-martins",
+          "document": "SAMARA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "edmilson-costa",
+          "document": "EDMILSON COSTA.pdf",
+          "page": null
+        }
+      ]
+    },
+    {
+      "id": "q14_banks",
+      "category": "economy",
+      "subaxis": "banking_system",
+      "level": "complete",
+      "weight": 1.3,
+      "question": "Qual deveria ser o papel dos bancos e do sistema financeiro?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Nacionalizar o sistema financeiro e colocá-lo sob controle público, popular ou dos trabalhadores.",
+          "matches": [
+            {
+              "candidateId": "edmilson-costa",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "rui-costa-pimenta",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "samara-martins",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "hertz-dias",
+              "weight": 0.75
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Manter bancos privados, mas usar bancos públicos fortes para financiar desenvolvimento, indústria e políticas sociais.",
+          "matches": [
+            {
+              "candidateId": "lula",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "ronaldo-caiado",
+              "weight": 0.65
+            },
+            {
+              "candidateId": "augusto-cury",
+              "weight": 0.55
+            }
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Priorizar competição privada e reduzir a atuação empresarial direta do Estado no sistema financeiro.",
+          "matches": [
+            {
+              "candidateId": "romeu-zema",
+              "weight": 0.9
+            },
+            {
+              "candidateId": "flavio-bolsonaro",
+              "weight": 0.7
+            }
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Não vejo necessidade de alterar estruturalmente o sistema bancário atual.",
+          "matches": []
+        },
+        {
+          "id": "neutral",
+          "text": "Não sei / Não tenho opinião",
+          "matches": []
+        }
+      ],
+      "sources": [
+        {
+          "candidateId": "edmilson-costa",
+          "document": "EDMILSON COSTA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "rui-costa-pimenta",
+          "document": "RUI COSTA PIMENTA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "samara-martins",
+          "document": "SAMARA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "hertz-dias",
+          "document": "HERTZ DIAS.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "lula",
+          "document": "LULA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "ronaldo-caiado",
+          "document": "RONALDO CAIADO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "augusto-cury",
+          "document": "ESCRITOR AUGUSTO CURY.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "romeu-zema",
+          "document": "ZEMA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "flavio-bolsonaro",
+          "document": "FLAVIO BOLSONARO.pdf",
+          "page": null
+        }
+      ]
+    },
+    {
+      "id": "q15_judiciary",
+      "category": "democracy_and_institutions",
+      "subaxis": "judiciary_institutional_reform",
+      "level": "complete",
+      "weight": 1.3,
+      "question": "Que tipo de reforma institucional do Judiciário você considera mais adequada?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Reformar o STF, limitando decisões individuais e reforçando decisões colegiadas e limites entre os Poderes.",
+          "matches": [
+            {
+              "candidateId": "flavio-bolsonaro",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "augusto-cury",
+              "weight": 0.65
+            },
+            {
+              "candidateId": "romeu-zema",
+              "weight": 0.6
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Reduzir foro privilegiado e rever mecanismos que criam dependência política entre Senado e STF.",
+          "matches": [
+            {
+              "candidateId": "romeu-zema",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "flavio-bolsonaro",
+              "weight": 0.55
+            }
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Extinguir o STF no formato atual e eleger juízes e procuradores, com mandatos revogáveis.",
+          "matches": [
+            {
+              "candidateId": "rui-costa-pimenta",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Preservar a estrutura básica do Judiciário, priorizando independência institucional, transparência e aperfeiçoamentos de governança.",
+          "matches": [
+            {
+              "candidateId": "ronaldo-caiado",
+              "weight": 0.9
+            },
+            {
+              "candidateId": "clariana-barao",
+              "weight": 0.7
+            },
+            {
+              "candidateId": "lula",
+              "weight": 0.75
+            }
+          ]
+        },
+        {
+          "id": "neutral",
+          "text": "Não sei / Não tenho opinião",
+          "matches": []
+        }
+      ],
+      "sources": [
+        {
+          "candidateId": "flavio-bolsonaro",
+          "document": "FLAVIO BOLSONARO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "augusto-cury",
+          "document": "ESCRITOR AUGUSTO CURY.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "romeu-zema",
+          "document": "ZEMA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "rui-costa-pimenta",
+          "document": "RUI COSTA PIMENTA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "ronaldo-caiado",
+          "document": "RONALDO CAIADO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "clariana-barao",
+          "document": "CLARIANA BARAO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "lula",
+          "document": "LULA.pdf",
+          "page": null
+        }
+      ]
+    },
+    {
+      "id": "q16_platform_speech",
+      "category": "civil_rights",
+      "subaxis": "platform_content_moderation",
+      "level": "complete",
+      "weight": 1.3,
+      "question": "Como redes sociais e grandes plataformas digitais deveriam lidar com conteúdo e liberdade de expressão?",
+      "options": [
+        {
+          "id": "a",
+          "text": "O Estado deve regular de forma mais forte as grandes plataformas, com transparência, proteção de direitos e responsabilização.",
+          "matches": [
+            {
+              "candidateId": "edmilson-costa",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "lula",
+              "weight": 0.9
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "text": "A liberdade de expressão deve prevalecer amplamente, limitando remoções de conteúdo e censura na internet.",
+          "matches": [
+            {
+              "candidateId": "rui-costa-pimenta",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "romeu-zema",
+              "weight": 0.9
+            }
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Plataformas não deveriam poder excluir perfis ou moderar opiniões; abusos deveriam gerar principalmente retratação ou indenização.",
+          "matches": [
+            {
+              "candidateId": "romeu-zema",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "rui-costa-pimenta",
+              "weight": 0.7
+            }
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Prefiro um modelo intermediário, com liberdade ampla, mas possibilidade de moderação e responsabilização sob regras transparentes.",
+          "matches": []
+        },
+        {
+          "id": "neutral",
+          "text": "Não sei / Não tenho opinião",
+          "matches": []
+        }
+      ],
+      "sources": [
+        {
+          "candidateId": "edmilson-costa",
+          "document": "EDMILSON COSTA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "lula",
+          "document": "LULA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "rui-costa-pimenta",
+          "document": "RUI COSTA PIMENTA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "romeu-zema",
+          "document": "ZEMA.pdf",
+          "page": null
+        }
+      ]
+    },
+    {
+      "id": "q17_foreign_policy",
+      "category": "foreign_policy",
+      "subaxis": "foreign_policy_alignment",
+      "level": "complete",
+      "weight": 1.3,
+      "question": "Qual orientação internacional o Brasil deveria priorizar?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Aprofundar BRICS, integração sul-americana, Sul Global e uma política externa multilateral autônoma.",
+          "matches": [
+            {
+              "candidateId": "lula",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "renan-santos",
+              "weight": 0.65
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Adotar política anti-imperialista, reduzindo a influência das grandes potências e apoiando movimentos e governos vistos como anti-imperialistas.",
+          "matches": [
+            {
+              "candidateId": "edmilson-costa",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "hertz-dias",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "rui-costa-pimenta",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "samara-martins",
+              "weight": 0.8
+            }
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Manter relações pragmáticas com todos os blocos, sem alinhamento automático, buscando comércio, investimento e autonomia.",
+          "matches": [
+            {
+              "candidateId": "ronaldo-caiado",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "clariana-barao",
+              "weight": 0.6
+            },
+            {
+              "candidateId": "augusto-cury",
+              "weight": 0.75
+            },
+            {
+              "candidateId": "flavio-bolsonaro",
+              "weight": 0.75
+            },
+            {
+              "candidateId": "renan-santos",
+              "weight": 0.8
+            }
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Sair do BRICS, aproximar o Brasil das democracias ocidentais, entrar na OCDE e ampliar o livre comércio.",
+          "matches": [
+            {
+              "candidateId": "romeu-zema",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "id": "neutral",
+          "text": "Não sei / Não tenho opinião",
+          "matches": []
+        }
+      ],
+      "sources": [
+        {
+          "candidateId": "lula",
+          "document": "LULA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "renan-santos",
+          "document": "RENAN SANTOS.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "edmilson-costa",
+          "document": "EDMILSON COSTA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "hertz-dias",
+          "document": "HERTZ DIAS.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "rui-costa-pimenta",
+          "document": "RUI COSTA PIMENTA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "samara-martins",
+          "document": "SAMARA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "ronaldo-caiado",
+          "document": "RONALDO CAIADO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "clariana-barao",
+          "document": "CLARIANA BARAO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "augusto-cury",
+          "document": "ESCRITOR AUGUSTO CURY.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "flavio-bolsonaro",
+          "document": "FLAVIO BOLSONARO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "romeu-zema",
+          "document": "ZEMA.pdf",
+          "page": null
+        }
+      ]
+    },
+    {
+      "id": "q18_energy",
+      "category": "energy",
+      "subaxis": "energy_transition_oil",
+      "level": "complete",
+      "weight": 1.3,
+      "question": "Como o Brasil deveria conduzir sua política energética?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Acelerar a transição para energia limpa e reduzir gradualmente a dependência e extração de petróleo, com forte controle estatal.",
+          "matches": [
+            {
+              "candidateId": "edmilson-costa",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "hertz-dias",
+              "weight": 0.8
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Expandir renováveis e biocombustíveis, mas continuar investindo também em petróleo e gás durante a transição.",
+          "matches": [
+            {
+              "candidateId": "lula",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Usar energia limpa como vantagem competitiva para atrair indústria e investimento, combinando Estado e iniciativa privada.",
+          "matches": [
+            {
+              "candidateId": "ronaldo-caiado",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "augusto-cury",
+              "weight": 0.75
+            },
+            {
+              "candidateId": "flavio-bolsonaro",
+              "weight": 0.75
+            },
+            {
+              "candidateId": "wilson-grassi",
+              "weight": 0.75
+            }
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Priorizar mercados competitivos de energia, investimento privado, gás, hidrogênio verde e mercados de carbono.",
+          "matches": [
+            {
+              "candidateId": "romeu-zema",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "flavio-bolsonaro",
+              "weight": 0.6
+            }
+          ]
+        },
+        {
+          "id": "neutral",
+          "text": "Não sei / Não tenho opinião",
+          "matches": []
+        }
+      ],
+      "sources": [
+        {
+          "candidateId": "edmilson-costa",
+          "document": "EDMILSON COSTA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "hertz-dias",
+          "document": "HERTZ DIAS.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "lula",
+          "document": "LULA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "ronaldo-caiado",
+          "document": "RONALDO CAIADO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "augusto-cury",
+          "document": "ESCRITOR AUGUSTO CURY.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "flavio-bolsonaro",
+          "document": "FLAVIO BOLSONARO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "wilson-grassi",
+          "document": "VETERINÁRIO WILSON GRASSI.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "romeu-zema",
+          "document": "ZEMA.pdf",
+          "page": null
+        }
+      ]
+    },
+    {
+      "id": "q19_minimum_wage",
+      "category": "labor",
+      "subaxis": "minimum_wage",
+      "level": "simple",
+      "weight": 1.0,
+      "question": "Qual direção o salário mínimo deveria seguir?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ter aumentos reais contínuos, acima da inflação, de forma gradual.",
+          "matches": [
+            {
+              "candidateId": "lula",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "edmilson-costa",
+              "weight": 0.65
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Ter aumento imediato muito forte, aproximando-se do salário mínimo calculado pelo Dieese.",
+          "matches": [
+            {
+              "candidateId": "hertz-dias",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "samara-martins",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "edmilson-costa",
+              "weight": 0.85
+            }
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Passar por uma recomposição muito maior dos salários, com reajustes automáticos ligados ao custo de vida.",
+          "matches": [
+            {
+              "candidateId": "rui-costa-pimenta",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Não considero grandes aumentos definidos pelo governo a melhor ferramenta para elevar renda.",
+          "matches": []
+        },
+        {
+          "id": "neutral",
+          "text": "Não sei / Não tenho opinião",
+          "matches": []
+        }
+      ],
+      "sources": [
+        {
+          "candidateId": "lula",
+          "document": "LULA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "edmilson-costa",
+          "document": "EDMILSON COSTA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "hertz-dias",
+          "document": "HERTZ DIAS.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "samara-martins",
+          "document": "SAMARA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "rui-costa-pimenta",
+          "document": "RUI COSTA PIMENTA.pdf",
+          "page": null
+        }
+      ]
+    },
+    {
+      "id": "q20_public_spending",
+      "category": "public_administration",
+      "subaxis": "state_efficiency",
+      "level": "simple",
+      "weight": 1.0,
+      "question": "Como o governo deveria lidar com programas públicos que não entregam bons resultados?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Medir resultados, corrigir ou encerrar programas ineficazes e publicar metas de desempenho.",
+          "matches": [
+            {
+              "candidateId": "clariana-barao",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "augusto-cury",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "ronaldo-caiado",
+              "weight": 0.9
+            },
+            {
+              "candidateId": "wilson-grassi",
+              "weight": 0.9
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Fazer uma reforma administrativa ampla, reduzindo ministérios, cargos e estruturas do governo.",
+          "matches": [
+            {
+              "candidateId": "romeu-zema",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "renan-santos",
+              "weight": 0.7
+            }
+          ]
+        },
+        {
+          "id": "c",
+          "text": "O principal problema não é o tamanho do Estado, mas garantir recursos suficientes para políticas sociais e serviços públicos.",
+          "matches": [
+            {
+              "candidateId": "edmilson-costa",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "hertz-dias",
+              "weight": 0.9
+            },
+            {
+              "candidateId": "samara-martins",
+              "weight": 0.9
+            },
+            {
+              "candidateId": "rui-costa-pimenta",
+              "weight": 0.9
+            }
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Combinar controle de gastos com preservação de áreas sociais prioritárias.",
+          "matches": [
+            {
+              "candidateId": "lula",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "ronaldo-caiado",
+              "weight": 0.8
+            },
+            {
+              "candidateId": "clariana-barao",
+              "weight": 0.75
+            }
+          ]
+        },
+        {
+          "id": "neutral",
+          "text": "Não sei / Não tenho opinião",
+          "matches": []
+        }
+      ],
+      "sources": [
+        {
+          "candidateId": "clariana-barao",
+          "document": "CLARIANA BARAO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "augusto-cury",
+          "document": "ESCRITOR AUGUSTO CURY.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "ronaldo-caiado",
+          "document": "RONALDO CAIADO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "wilson-grassi",
+          "document": "VETERINÁRIO WILSON GRASSI.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "romeu-zema",
+          "document": "ZEMA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "renan-santos",
+          "document": "RENAN SANTOS.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "edmilson-costa",
+          "document": "EDMILSON COSTA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "hertz-dias",
+          "document": "HERTZ DIAS.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "samara-martins",
+          "document": "SAMARA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "rui-costa-pimenta",
+          "document": "RUI COSTA PIMENTA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "lula",
+          "document": "LULA.pdf",
+          "page": null
+        }
+      ]
+    },
+    {
+      "id": "q21_education_focus",
+      "category": "education",
+      "subaxis": "education_model",
+      "level": "simple",
+      "weight": 1.0,
+      "question": "Qual deveria ser a prioridade principal da educação pública?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Alfabetização, recuperação de aprendizagem e avaliação de resultados.",
+          "matches": [
+            {
+              "candidateId": "clariana-barao",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "ronaldo-caiado",
+              "weight": 0.9
+            },
+            {
+              "candidateId": "wilson-grassi",
+              "weight": 0.9
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Tecnologia, empreendedorismo, competências socioemocionais e conexão com o mercado de trabalho.",
+          "matches": [
+            {
+              "candidateId": "augusto-cury",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "leonardo-avalanche",
+              "weight": 0.9
+            }
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Expandir educação pública e inclusão, conectando formação profissional, ciência e desenvolvimento.",
+          "matches": [
+            {
+              "candidateId": "lula",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "ronaldo-caiado",
+              "weight": 0.7
+            }
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Avançar para educação totalmente pública, gratuita e com maior controle social.",
+          "matches": [
+            {
+              "candidateId": "edmilson-costa",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "rui-costa-pimenta",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "samara-martins",
+              "weight": 0.85
+            },
+            {
+              "candidateId": "hertz-dias",
+              "weight": 0.8
+            }
+          ]
+        },
+        {
+          "id": "neutral",
+          "text": "Não sei / Não tenho opinião",
+          "matches": []
+        }
+      ],
+      "sources": [
+        {
+          "candidateId": "clariana-barao",
+          "document": "CLARIANA BARAO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "ronaldo-caiado",
+          "document": "RONALDO CAIADO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "wilson-grassi",
+          "document": "VETERINÁRIO WILSON GRASSI.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "augusto-cury",
+          "document": "ESCRITOR AUGUSTO CURY.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "leonardo-avalanche",
+          "document": "LEONARDO AVALANCHE.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "lula",
+          "document": "LULA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "edmilson-costa",
+          "document": "EDMILSON COSTA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "rui-costa-pimenta",
+          "document": "RUI COSTA PIMENTA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "samara-martins",
+          "document": "SAMARA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "hertz-dias",
+          "document": "HERTZ DIAS.pdf",
+          "page": null
+        }
+      ]
+    },
+    {
+      "id": "q22_health_queue",
+      "category": "health",
+      "subaxis": "health_waiting_lists",
+      "level": "simple",
+      "weight": 1.0,
+      "question": "Qual medida deveria ter prioridade para reduzir as filas do SUS?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Criar uma fila nacional pública e transparente, organizada por prioridade clínica.",
+          "matches": [
+            {
+              "candidateId": "wilson-grassi",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "ronaldo-caiado",
+              "weight": 0.8
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Usar hospitais e clínicas privadas ociosas, além de mutirões e telemedicina.",
+          "matches": [
+            {
+              "candidateId": "leonardo-avalanche",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "romeu-zema",
+              "weight": 0.8
+            }
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Fortalecer atenção primária, digitalização, prevenção e gestão regional do SUS.",
+          "matches": [
+            {
+              "candidateId": "clariana-barao",
+              "weight": 0.9
+            },
+            {
+              "candidateId": "augusto-cury",
+              "weight": 0.9
+            },
+            {
+              "candidateId": "ronaldo-caiado",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "lula",
+              "weight": 0.75
+            }
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Expandir diretamente a rede pública e reduzir a presença de modelos privados de gestão.",
+          "matches": [
+            {
+              "candidateId": "edmilson-costa",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "hertz-dias",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "samara-martins",
+              "weight": 0.8
+            }
+          ]
+        },
+        {
+          "id": "neutral",
+          "text": "Não sei / Não tenho opinião",
+          "matches": []
+        }
+      ],
+      "sources": [
+        {
+          "candidateId": "wilson-grassi",
+          "document": "VETERINÁRIO WILSON GRASSI.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "ronaldo-caiado",
+          "document": "RONALDO CAIADO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "leonardo-avalanche",
+          "document": "LEONARDO AVALANCHE.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "romeu-zema",
+          "document": "ZEMA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "clariana-barao",
+          "document": "CLARIANA BARAO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "augusto-cury",
+          "document": "ESCRITOR AUGUSTO CURY.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "lula",
+          "document": "LULA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "edmilson-costa",
+          "document": "EDMILSON COSTA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "hertz-dias",
+          "document": "HERTZ DIAS.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "samara-martins",
+          "document": "SAMARA.pdf",
+          "page": null
+        }
+      ]
+    },
+    {
+      "id": "q23_women_protection",
+      "category": "civil_rights",
+      "subaxis": "women_violence",
+      "level": "simple",
+      "weight": 1.0,
+      "question": "Qual estratégia deveria ter prioridade no combate à violência contra a mulher?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Integrar saúde, assistência, segurança e Justiça, com avaliação de risco e acompanhamento das vítimas.",
+          "matches": [
+            {
+              "candidateId": "clariana-barao",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "ronaldo-caiado",
+              "weight": 0.85
+            },
+            {
+              "candidateId": "lula",
+              "weight": 0.8
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Expandir monitoramento de agressores, delegacias especializadas e resposta policial mais rápida.",
+          "matches": [
+            {
+              "candidateId": "flavio-bolsonaro",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "romeu-zema",
+              "weight": 0.9
+            },
+            {
+              "candidateId": "ronaldo-caiado",
+              "weight": 0.9
+            }
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Combinar proteção com autonomia econômica, crédito, emprego e serviços de cuidado.",
+          "matches": [
+            {
+              "candidateId": "clariana-barao",
+              "weight": 0.9
+            },
+            {
+              "candidateId": "flavio-bolsonaro",
+              "weight": 0.85
+            },
+            {
+              "candidateId": "lula",
+              "weight": 0.9
+            },
+            {
+              "candidateId": "samara-martins",
+              "weight": 0.85
+            },
+            {
+              "candidateId": "hertz-dias",
+              "weight": 0.8
+            }
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Além da proteção, ampliar direitos reprodutivos e políticas públicas de cuidado para reduzir desigualdades estruturais.",
+          "matches": [
+            {
+              "candidateId": "samara-martins",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "hertz-dias",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "lula",
+              "weight": 0.65
+            }
+          ]
+        },
+        {
+          "id": "neutral",
+          "text": "Não sei / Não tenho opinião",
+          "matches": []
+        }
+      ],
+      "sources": [
+        {
+          "candidateId": "clariana-barao",
+          "document": "CLARIANA BARAO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "ronaldo-caiado",
+          "document": "RONALDO CAIADO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "lula",
+          "document": "LULA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "flavio-bolsonaro",
+          "document": "FLAVIO BOLSONARO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "romeu-zema",
+          "document": "ZEMA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "samara-martins",
+          "document": "SAMARA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "hertz-dias",
+          "document": "HERTZ DIAS.pdf",
+          "page": null
+        }
+      ]
+    },
+    {
+      "id": "q24_infrastructure_model",
+      "category": "infrastructure",
+      "subaxis": "infrastructure_investment",
+      "level": "simple",
+      "weight": 1.0,
+      "question": "Como grandes obras de infraestrutura deveriam ser financiadas e operadas?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Principalmente por concessões e investimento privado, com o Estado garantindo regras e fiscalização.",
+          "matches": [
+            {
+              "candidateId": "wilson-grassi",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "romeu-zema",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "flavio-bolsonaro",
+              "weight": 0.8
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Por combinação de investimento público, estatais, concessões e capital privado.",
+          "matches": [
+            {
+              "candidateId": "lula",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "ronaldo-caiado",
+              "weight": 0.9
+            },
+            {
+              "candidateId": "clariana-barao",
+              "weight": 0.75
+            }
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Com participação estatal forte e foco estratégico em desenvolvimento nacional e integração regional.",
+          "matches": [
+            {
+              "candidateId": "edmilson-costa",
+              "weight": 0.9
+            },
+            {
+              "candidateId": "samara-martins",
+              "weight": 0.8
+            },
+            {
+              "candidateId": "hertz-dias",
+              "weight": 0.8
+            }
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Com investimento privado quando eficiente, mas políticas públicas muito focadas em produtividade e logística.",
+          "matches": [
+            {
+              "candidateId": "renan-santos",
+              "weight": 0.9
+            },
+            {
+              "candidateId": "ronaldo-caiado",
+              "weight": 0.75
+            }
+          ]
+        },
+        {
+          "id": "neutral",
+          "text": "Não sei / Não tenho opinião",
+          "matches": []
+        }
+      ],
+      "sources": [
+        {
+          "candidateId": "wilson-grassi",
+          "document": "VETERINÁRIO WILSON GRASSI.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "romeu-zema",
+          "document": "ZEMA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "flavio-bolsonaro",
+          "document": "FLAVIO BOLSONARO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "lula",
+          "document": "LULA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "ronaldo-caiado",
+          "document": "RONALDO CAIADO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "clariana-barao",
+          "document": "CLARIANA BARAO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "edmilson-costa",
+          "document": "EDMILSON COSTA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "samara-martins",
+          "document": "SAMARA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "hertz-dias",
+          "document": "HERTZ DIAS.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "renan-santos",
+          "document": "RENAN SANTOS.pdf",
+          "page": null
+        }
+      ]
+    },
+    {
+      "id": "q25_retirement",
+      "category": "pensions",
+      "subaxis": "retirement_reform",
+      "level": "moderate",
+      "weight": 1.15,
+      "question": "Qual direção a Previdência deveria seguir?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Revogar reformas recentes e reduzir requisitos, fortalecendo um sistema público e universal.",
+          "matches": [
+            {
+              "candidateId": "edmilson-costa",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "hertz-dias",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "rui-costa-pimenta",
+              "weight": 0.85
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Manter a estrutura geral atual, com ajustes para sustentabilidade e proteção social.",
+          "matches": []
+        },
+        {
+          "id": "c",
+          "text": "Fazer nova reforma e ajustar automaticamente a idade mínima conforme expectativa de vida e sustentabilidade do sistema.",
+          "matches": [
+            {
+              "candidateId": "romeu-zema",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Reformar o sistema de forma ampla, inclusive revendo indexações e benefícios para controlar o gasto de longo prazo.",
+          "matches": [
+            {
+              "candidateId": "renan-santos",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "romeu-zema",
+              "weight": 0.75
+            }
+          ]
+        },
+        {
+          "id": "neutral",
+          "text": "Não sei / Não tenho opinião",
+          "matches": []
+        }
+      ],
+      "sources": [
+        {
+          "candidateId": "edmilson-costa",
+          "document": "EDMILSON COSTA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "hertz-dias",
+          "document": "HERTZ DIAS.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "rui-costa-pimenta",
+          "document": "RUI COSTA PIMENTA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "romeu-zema",
+          "document": "ZEMA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "renan-santos",
+          "document": "RENAN SANTOS.pdf",
+          "page": null
+        }
+      ]
+    },
+    {
+      "id": "q26_outsourcing",
+      "category": "labor",
+      "subaxis": "outsourcing",
+      "level": "moderate",
+      "weight": 1.15,
+      "question": "Como a legislação deveria tratar terceirização e formas de contratação mais flexíveis?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Revogar a reforma trabalhista e acabar amplamente com terceirizações.",
+          "matches": [
+            {
+              "candidateId": "edmilson-costa",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "hertz-dias",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "rui-costa-pimenta",
+              "weight": 0.9
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Combater fraudes e precarização, mas sem eliminar toda terceirização.",
+          "matches": [
+            {
+              "candidateId": "lula",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Priorizar redução do custo de contratação formal e simplificação das obrigações trabalhistas.",
+          "matches": [
+            {
+              "candidateId": "wilson-grassi",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "romeu-zema",
+              "weight": 0.7
+            }
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Manter maior liberdade de contratação e reduzir regulações que dificultam emprego e empreendedorismo.",
+          "matches": [
+            {
+              "candidateId": "flavio-bolsonaro",
+              "weight": 0.8
+            },
+            {
+              "candidateId": "romeu-zema",
+              "weight": 0.85
+            },
+            {
+              "candidateId": "renan-santos",
+              "weight": 0.75
+            }
+          ]
+        },
+        {
+          "id": "neutral",
+          "text": "Não sei / Não tenho opinião",
+          "matches": []
+        }
+      ],
+      "sources": [
+        {
+          "candidateId": "edmilson-costa",
+          "document": "EDMILSON COSTA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "hertz-dias",
+          "document": "HERTZ DIAS.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "rui-costa-pimenta",
+          "document": "RUI COSTA PIMENTA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "lula",
+          "document": "LULA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "wilson-grassi",
+          "document": "VETERINÁRIO WILSON GRASSI.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "romeu-zema",
+          "document": "ZEMA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "flavio-bolsonaro",
+          "document": "FLAVIO BOLSONARO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "renan-santos",
+          "document": "RENAN SANTOS.pdf",
+          "page": null
+        }
+      ]
+    },
+    {
+      "id": "q27_criminal_age",
+      "category": "security",
+      "subaxis": "criminal_age",
+      "level": "moderate",
+      "weight": 1.15,
+      "question": "Sobre a maioridade penal, qual posição mais se aproxima da sua?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Manter aos 18 anos e rejeitar sua redução.",
+          "matches": [
+            {
+              "candidateId": "hertz-dias",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Reduzir para 16 anos.",
+          "matches": [
+            {
+              "candidateId": "flavio-bolsonaro",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "romeu-zema",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Reduzir para 16 e permitir responsabilização ainda mais jovem em crimes graves específicos.",
+          "matches": [
+            {
+              "candidateId": "flavio-bolsonaro",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "romeu-zema",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Não considero a idade penal o principal instrumento para reduzir a criminalidade.",
+          "matches": [
+            {
+              "candidateId": "edmilson-costa",
+              "weight": 0.6
+            },
+            {
+              "candidateId": "samara-martins",
+              "weight": 0.6
+            }
+          ]
+        },
+        {
+          "id": "neutral",
+          "text": "Não sei / Não tenho opinião",
+          "matches": []
+        }
+      ],
+      "sources": [
+        {
+          "candidateId": "hertz-dias",
+          "document": "HERTZ DIAS.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "flavio-bolsonaro",
+          "document": "FLAVIO BOLSONARO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "romeu-zema",
+          "document": "ZEMA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "edmilson-costa",
+          "document": "EDMILSON COSTA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "samara-martins",
+          "document": "SAMARA.pdf",
+          "page": null
+        }
+      ]
+    },
+    {
+      "id": "q28_prison_model",
+      "category": "security",
+      "subaxis": "prisons",
+      "level": "moderate",
+      "weight": 1.15,
+      "question": "Qual deveria ser a prioridade no sistema prisional para combater o crime organizado?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ampliar fortemente presídios de segurança máxima e endurecer a progressão de pena para lideranças criminosas.",
+          "matches": [
+            {
+              "candidateId": "flavio-bolsonaro",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "romeu-zema",
+              "weight": 0.9
+            },
+            {
+              "candidateId": "ronaldo-caiado",
+              "weight": 0.9
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Isolar lideranças, bloquear comunicações e usar inteligência financeira, sem transformar segurança máxima em regra para todos.",
+          "matches": [
+            {
+              "candidateId": "wilson-grassi",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "ronaldo-caiado",
+              "weight": 0.9
+            },
+            {
+              "candidateId": "lula",
+              "weight": 0.8
+            }
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Reduzir encarceramento em massa, desmilitarizar a segurança e ampliar reinserção social.",
+          "matches": [
+            {
+              "candidateId": "edmilson-costa",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "hertz-dias",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "samara-martins",
+              "weight": 0.85
+            }
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Combinar segurança máxima para lideranças com educação, trabalho e reinserção para os demais presos.",
+          "matches": [
+            {
+              "candidateId": "ronaldo-caiado",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "lula",
+              "weight": 0.75
+            }
+          ]
+        },
+        {
+          "id": "neutral",
+          "text": "Não sei / Não tenho opinião",
+          "matches": []
+        }
+      ],
+      "sources": [
+        {
+          "candidateId": "flavio-bolsonaro",
+          "document": "FLAVIO BOLSONARO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "romeu-zema",
+          "document": "ZEMA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "ronaldo-caiado",
+          "document": "RONALDO CAIADO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "wilson-grassi",
+          "document": "VETERINÁRIO WILSON GRASSI.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "lula",
+          "document": "LULA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "edmilson-costa",
+          "document": "EDMILSON COSTA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "hertz-dias",
+          "document": "HERTZ DIAS.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "samara-martins",
+          "document": "SAMARA.pdf",
+          "page": null
+        }
+      ]
+    },
+    {
+      "id": "q29_rural_guns",
+      "category": "security",
+      "subaxis": "gun_policy",
+      "level": "moderate",
+      "weight": 1.15,
+      "question": "Sobre armas de fogo, qual política mais se aproxima da sua visão?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Fortalecer controle, rastreabilidade e fiscalização de armas e munições.",
+          "matches": [
+            {
+              "candidateId": "lula",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "samara-martins",
+              "weight": 0.6
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Ampliar o direito de porte para produtores rurais em toda a propriedade, como instrumento de autodefesa.",
+          "matches": [
+            {
+              "candidateId": "romeu-zema",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Reconhecer amplamente o direito de autodefesa organizada dos trabalhadores e comunidades.",
+          "matches": [
+            {
+              "candidateId": "rui-costa-pimenta",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Manter as regras atuais sem grande mudança.",
+          "matches": []
+        },
+        {
+          "id": "neutral",
+          "text": "Não sei / Não tenho opinião",
+          "matches": []
+        }
+      ],
+      "sources": [
+        {
+          "candidateId": "lula",
+          "document": "LULA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "samara-martins",
+          "document": "SAMARA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "romeu-zema",
+          "document": "ZEMA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "rui-costa-pimenta",
+          "document": "RUI COSTA PIMENTA.pdf",
+          "page": null
+        }
+      ]
+    },
+    {
+      "id": "q30_environment",
+      "category": "environment",
+      "subaxis": "environment_policy_model",
+      "level": "moderate",
+      "weight": 1.15,
+      "question": "Qual deveria ser a principal estratégia ambiental do Brasil?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Combater desmatamento e degradação com fiscalização forte, rastreabilidade e responsabilização.",
+          "matches": [
+            {
+              "candidateId": "lula",
+              "weight": 0.9
+            },
+            {
+              "candidateId": "wilson-grassi",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "ronaldo-caiado",
+              "weight": 0.85
+            },
+            {
+              "candidateId": "romeu-zema",
+              "weight": 0.65
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Usar mercado de carbono, serviços ambientais e ativos naturais como motores de desenvolvimento.",
+          "matches": [
+            {
+              "candidateId": "ronaldo-caiado",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "romeu-zema",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "flavio-bolsonaro",
+              "weight": 0.8
+            },
+            {
+              "candidateId": "augusto-cury",
+              "weight": 0.75
+            }
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Integrar política climática à industrialização verde, transição energética e bioeconomia.",
+          "matches": [
+            {
+              "candidateId": "lula",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "ronaldo-caiado",
+              "weight": 0.75
+            },
+            {
+              "candidateId": "augusto-cury",
+              "weight": 0.7
+            }
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Simplificar licenciamento e usar tecnologia para conciliar conservação com expansão produtiva.",
+          "matches": [
+            {
+              "candidateId": "renan-santos",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "wilson-grassi",
+              "weight": 0.85
+            },
+            {
+              "candidateId": "romeu-zema",
+              "weight": 0.75
+            }
+          ]
+        },
+        {
+          "id": "neutral",
+          "text": "Não sei / Não tenho opinião",
+          "matches": []
+        }
+      ],
+      "sources": [
+        {
+          "candidateId": "lula",
+          "document": "LULA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "wilson-grassi",
+          "document": "VETERINÁRIO WILSON GRASSI.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "ronaldo-caiado",
+          "document": "RONALDO CAIADO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "romeu-zema",
+          "document": "ZEMA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "flavio-bolsonaro",
+          "document": "FLAVIO BOLSONARO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "augusto-cury",
+          "document": "ESCRITOR AUGUSTO CURY.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "renan-santos",
+          "document": "RENAN SANTOS.pdf",
+          "page": null
+        }
+      ]
+    },
+    {
+      "id": "q31_digital_government",
+      "category": "public_administration",
+      "subaxis": "digital_government",
+      "level": "moderate",
+      "weight": 1.15,
+      "question": "Qual modelo de modernização do Estado você prefere?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Digitalizar serviços, integrar dados e exigir que o cidadão informe seus dados apenas uma vez.",
+          "matches": [
+            {
+              "candidateId": "clariana-barao",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "augusto-cury",
+              "weight": 0.9
+            },
+            {
+              "candidateId": "wilson-grassi",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Digitalizar e usar IA principalmente para medir resultados, combater desperdícios e fiscalizar políticas.",
+          "matches": [
+            {
+              "candidateId": "augusto-cury",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "wilson-grassi",
+              "weight": 0.85
+            },
+            {
+              "candidateId": "lula",
+              "weight": 0.7
+            }
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Reduzir estruturas, cargos e órgãos, deixando o Estado menor além de mais digital.",
+          "matches": [
+            {
+              "candidateId": "romeu-zema",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "renan-santos",
+              "weight": 0.75
+            }
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Ampliar controle social e participação dos trabalhadores sobre a administração e os serviços públicos.",
+          "matches": [
+            {
+              "candidateId": "edmilson-costa",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "samara-martins",
+              "weight": 0.9
+            },
+            {
+              "candidateId": "rui-costa-pimenta",
+              "weight": 0.9
+            }
+          ]
+        },
+        {
+          "id": "neutral",
+          "text": "Não sei / Não tenho opinião",
+          "matches": []
+        }
+      ],
+      "sources": [
+        {
+          "candidateId": "clariana-barao",
+          "document": "CLARIANA BARAO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "augusto-cury",
+          "document": "ESCRITOR AUGUSTO CURY.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "wilson-grassi",
+          "document": "VETERINÁRIO WILSON GRASSI.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "lula",
+          "document": "LULA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "romeu-zema",
+          "document": "ZEMA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "renan-santos",
+          "document": "RENAN SANTOS.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "edmilson-costa",
+          "document": "EDMILSON COSTA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "samara-martins",
+          "document": "SAMARA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "rui-costa-pimenta",
+          "document": "RUI COSTA PIMENTA.pdf",
+          "page": null
+        }
+      ]
+    },
+    {
+      "id": "q32_childcare",
+      "category": "social_policy",
+      "subaxis": "care_policy",
+      "level": "moderate",
+      "weight": 1.15,
+      "question": "Qual deveria ser o papel do Estado na política de cuidado de crianças, idosos e dependentes?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Expandir creches, serviços comunitários e políticas de cuidado para reduzir desigualdades e facilitar participação no trabalho.",
+          "matches": [
+            {
+              "candidateId": "clariana-barao",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "lula",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "samara-martins",
+              "weight": 0.95
+            },
+            {
+              "candidateId": "hertz-dias",
+              "weight": 0.9
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Integrar cuidado às políticas de proteção social e autonomia econômica das famílias.",
+          "matches": [
+            {
+              "candidateId": "ronaldo-caiado",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "flavio-bolsonaro",
+              "weight": 0.75
+            },
+            {
+              "candidateId": "augusto-cury",
+              "weight": 0.7
+            }
+          ]
+        },
+        {
+          "id": "c",
+          "text": "A prioridade deve ser dar renda e liberdade para que cada família organize o cuidado como preferir.",
+          "matches": []
+        },
+        {
+          "id": "d",
+          "text": "O Estado deve socializar parte relevante do cuidado com ampla rede pública e comunitária.",
+          "matches": [
+            {
+              "candidateId": "samara-martins",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "hertz-dias",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "lula",
+              "weight": 0.75
+            }
+          ]
+        },
+        {
+          "id": "neutral",
+          "text": "Não sei / Não tenho opinião",
+          "matches": []
+        }
+      ],
+      "sources": [
+        {
+          "candidateId": "clariana-barao",
+          "document": "CLARIANA BARAO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "lula",
+          "document": "LULA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "samara-martins",
+          "document": "SAMARA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "hertz-dias",
+          "document": "HERTZ DIAS.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "ronaldo-caiado",
+          "document": "RONALDO CAIADO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "flavio-bolsonaro",
+          "document": "FLAVIO BOLSONARO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "augusto-cury",
+          "document": "ESCRITOR AUGUSTO CURY.pdf",
+          "page": null
+        }
+      ]
+    },
+    {
+      "id": "q33_indigenous_mining",
+      "category": "energy",
+      "subaxis": "indigenous_land_mining",
+      "level": "complete",
+      "weight": 1.3,
+      "question": "Como o Brasil deveria tratar mineração em terras indígenas?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Permitir apenas sob regime legal específico, com autorização do Congresso, consulta prévia e participação econômica das comunidades.",
+          "matches": [
+            {
+              "candidateId": "wilson-grassi",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "renan-santos",
+              "weight": 0.85
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Permitir exploração controlada quando considerada estratégica, com regras ambientais e econômicas específicas.",
+          "matches": [
+            {
+              "candidateId": "renan-santos",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "wilson-grassi",
+              "weight": 0.8
+            }
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Priorizar a proteção territorial e retirar atividades empresariais ou do agronegócio de áreas indígenas e quilombolas.",
+          "matches": [
+            {
+              "candidateId": "hertz-dias",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "samara-martins",
+              "weight": 0.8
+            }
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Manter a proibição atual sem abrir nova frente de exploração mineral nessas áreas.",
+          "matches": []
+        },
+        {
+          "id": "neutral",
+          "text": "Não sei / Não tenho opinião",
+          "matches": []
+        }
+      ],
+      "sources": [
+        {
+          "candidateId": "wilson-grassi",
+          "document": "VETERINÁRIO WILSON GRASSI.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "renan-santos",
+          "document": "RENAN SANTOS.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "hertz-dias",
+          "document": "HERTZ DIAS.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "samara-martins",
+          "document": "SAMARA.pdf",
+          "page": null
+        }
+      ]
+    },
+    {
+      "id": "q34_public_transport",
+      "category": "public_transport",
+      "subaxis": "transport_ownership",
+      "level": "complete",
+      "weight": 1.3,
+      "question": "Qual modelo de transporte coletivo urbano você considera mais adequado?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Tarifa zero e operação estatal, revertendo concessões privadas.",
+          "matches": [
+            {
+              "candidateId": "hertz-dias",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "edmilson-costa",
+              "weight": 0.9
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Sistema público forte, com planejamento estatal e possibilidade de diferentes formas de operação.",
+          "matches": [
+            {
+              "candidateId": "lula",
+              "weight": 0.7
+            },
+            {
+              "candidateId": "samara-martins",
+              "weight": 0.75
+            }
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Concessões privadas com metas, fiscalização e competição regulada.",
+          "matches": [
+            {
+              "candidateId": "wilson-grassi",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "romeu-zema",
+              "weight": 0.8
+            }
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Priorizar investimento em mobilidade e infraestrutura sem definir um único modelo nacional de propriedade.",
+          "matches": [
+            {
+              "candidateId": "ronaldo-caiado",
+              "weight": 0.8
+            },
+            {
+              "candidateId": "clariana-barao",
+              "weight": 0.6
+            }
+          ]
+        },
+        {
+          "id": "neutral",
+          "text": "Não sei / Não tenho opinião",
+          "matches": []
+        }
+      ],
+      "sources": [
+        {
+          "candidateId": "hertz-dias",
+          "document": "HERTZ DIAS.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "edmilson-costa",
+          "document": "EDMILSON COSTA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "lula",
+          "document": "LULA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "samara-martins",
+          "document": "SAMARA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "wilson-grassi",
+          "document": "VETERINÁRIO WILSON GRASSI.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "romeu-zema",
+          "document": "ZEMA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "ronaldo-caiado",
+          "document": "RONALDO CAIADO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "clariana-barao",
+          "document": "CLARIANA BARAO.pdf",
+          "page": null
+        }
+      ]
+    },
+    {
+      "id": "q35_mental_health",
+      "category": "health",
+      "subaxis": "mental_health",
+      "level": "complete",
+      "weight": 1.3,
+      "question": "Qual papel a saúde mental deveria ter nas políticas públicas?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Ser uma prioridade nacional integrada a escolas, empresas, universidades, forças de segurança e unidades de saúde.",
+          "matches": [
+            {
+              "candidateId": "augusto-cury",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Fortalecer rede pública de saúde mental e abordagem antimanicomial.",
+          "matches": [
+            {
+              "candidateId": "edmilson-costa",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "hertz-dias",
+              "weight": 0.8
+            }
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Integrar saúde mental à rede social, escolar e de assistência com metas e financiamento estável.",
+          "matches": [
+            {
+              "candidateId": "romeu-zema",
+              "weight": 0.9
+            },
+            {
+              "candidateId": "lula",
+              "weight": 0.7
+            }
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Tratar saúde mental principalmente dentro da política geral de atenção primária e prevenção.",
+          "matches": [
+            {
+              "candidateId": "clariana-barao",
+              "weight": 0.8
+            },
+            {
+              "candidateId": "ronaldo-caiado",
+              "weight": 0.7
+            }
+          ]
+        },
+        {
+          "id": "neutral",
+          "text": "Não sei / Não tenho opinião",
+          "matches": []
+        }
+      ],
+      "sources": [
+        {
+          "candidateId": "augusto-cury",
+          "document": "ESCRITOR AUGUSTO CURY.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "edmilson-costa",
+          "document": "EDMILSON COSTA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "hertz-dias",
+          "document": "HERTZ DIAS.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "romeu-zema",
+          "document": "ZEMA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "lula",
+          "document": "LULA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "clariana-barao",
+          "document": "CLARIANA BARAO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "ronaldo-caiado",
+          "document": "RONALDO CAIADO.pdf",
+          "page": null
+        }
+      ]
+    },
+    {
+      "id": "q36_entrepreneurship",
+      "category": "economy",
+      "subaxis": "entrepreneurship_policy",
+      "level": "complete",
+      "weight": 1.3,
+      "question": "Como o governo deveria estimular empreendedorismo e pequenos negócios?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Criar estrutura pública específica, crédito subsidiado, formação e clubes de empreendedorismo em larga escala.",
+          "matches": [
+            {
+              "candidateId": "augusto-cury",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Reduzir burocracia, impostos e barreiras regulatórias para facilitar abrir, operar e fechar empresas.",
+          "matches": [
+            {
+              "candidateId": "romeu-zema",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "flavio-bolsonaro",
+              "weight": 0.85
+            },
+            {
+              "candidateId": "wilson-grassi",
+              "weight": 0.85
+            }
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Usar crédito público, compras governamentais e políticas industriais para fortalecer pequenos negócios e produção nacional.",
+          "matches": [
+            {
+              "candidateId": "lula",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "clariana-barao",
+              "weight": 0.8
+            },
+            {
+              "candidateId": "ronaldo-caiado",
+              "weight": 0.7
+            }
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Priorizar cooperativas, empresas públicas e formas coletivas de produção em vez de empreendedorismo individual como eixo central.",
+          "matches": [
+            {
+              "candidateId": "samara-martins",
+              "weight": 0.9
+            },
+            {
+              "candidateId": "hertz-dias",
+              "weight": 0.85
+            },
+            {
+              "candidateId": "edmilson-costa",
+              "weight": 0.8
+            }
+          ]
+        },
+        {
+          "id": "neutral",
+          "text": "Não sei / Não tenho opinião",
+          "matches": []
+        }
+      ],
+      "sources": [
+        {
+          "candidateId": "augusto-cury",
+          "document": "ESCRITOR AUGUSTO CURY.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "romeu-zema",
+          "document": "ZEMA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "flavio-bolsonaro",
+          "document": "FLAVIO BOLSONARO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "wilson-grassi",
+          "document": "VETERINÁRIO WILSON GRASSI.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "lula",
+          "document": "LULA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "clariana-barao",
+          "document": "CLARIANA BARAO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "ronaldo-caiado",
+          "document": "RONALDO CAIADO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "samara-martins",
+          "document": "SAMARA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "hertz-dias",
+          "document": "HERTZ DIAS.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "edmilson-costa",
+          "document": "EDMILSON COSTA.pdf",
+          "page": null
+        }
+      ]
+    },
+    {
+      "id": "q37_financial_transaction_tax",
+      "category": "taxes",
+      "subaxis": "single_tax_models",
+      "level": "complete",
+      "weight": 1.3,
+      "question": "Se o sistema tributário fosse radicalmente simplificado, qual modelo faria mais sentido?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Um imposto único de baixa alíquota substituindo um conjunto muito amplo de tributos, inclusive sobre renda e consumo.",
+          "matches": [
+            {
+              "candidateId": "leonardo-avalanche",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Um imposto federal automático sobre movimentações financeiras substituindo diversos tributos federais, preservando IR, ICMS e ISS.",
+          "matches": [
+            {
+              "candidateId": "wilson-grassi",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Prefiro simplificar mantendo diferentes tributos, mas deixando o sistema mais progressivo e reduzindo peso sobre baixa renda.",
+          "matches": [
+            {
+              "candidateId": "lula",
+              "weight": 0.9
+            },
+            {
+              "candidateId": "edmilson-costa",
+              "weight": 0.9
+            },
+            {
+              "candidateId": "samara-martins",
+              "weight": 0.85
+            },
+            {
+              "candidateId": "hertz-dias",
+              "weight": 0.85
+            }
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Prefiro simplificar e reduzir a carga, sem adotar um imposto único sobre todas as transações.",
+          "matches": [
+            {
+              "candidateId": "romeu-zema",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "augusto-cury",
+              "weight": 0.75
+            },
+            {
+              "candidateId": "flavio-bolsonaro",
+              "weight": 0.7
+            }
+          ]
+        },
+        {
+          "id": "neutral",
+          "text": "Não sei / Não tenho opinião",
+          "matches": []
+        }
+      ],
+      "sources": [
+        {
+          "candidateId": "leonardo-avalanche",
+          "document": "LEONARDO AVALANCHE.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "wilson-grassi",
+          "document": "VETERINÁRIO WILSON GRASSI.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "lula",
+          "document": "LULA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "edmilson-costa",
+          "document": "EDMILSON COSTA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "samara-martins",
+          "document": "SAMARA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "hertz-dias",
+          "document": "HERTZ DIAS.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "romeu-zema",
+          "document": "ZEMA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "augusto-cury",
+          "document": "ESCRITOR AUGUSTO CURY.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "flavio-bolsonaro",
+          "document": "FLAVIO BOLSONARO.pdf",
+          "page": null
+        }
+      ]
+    },
+    {
+      "id": "q38_defavelization",
+      "category": "housing",
+      "subaxis": "defavelization",
+      "level": "complete",
+      "weight": 1.3,
+      "question": "Qual abordagem deveria orientar políticas para favelas e assentamentos urbanos precários?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Transformá-los em bairros formais com títulos individuais, serviços públicos, regras urbanísticas e financiamento de longo prazo.",
+          "matches": [
+            {
+              "candidateId": "renan-santos",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Urbanizar, regularizar e ampliar habitação pública/social, respeitando a função social da propriedade.",
+          "matches": [
+            {
+              "candidateId": "samara-martins",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "lula",
+              "weight": 0.85
+            },
+            {
+              "candidateId": "hertz-dias",
+              "weight": 0.8
+            }
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Priorizar casa própria via crédito, regularização fundiária e parcerias com o setor privado.",
+          "matches": [
+            {
+              "candidateId": "flavio-bolsonaro",
+              "weight": 0.9
+            },
+            {
+              "candidateId": "wilson-grassi",
+              "weight": 0.7
+            }
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Combinar urbanização, regularização e forte presença do Estado em segurança, saúde e educação antes de outras mudanças.",
+          "matches": [
+            {
+              "candidateId": "ronaldo-caiado",
+              "weight": 0.7
+            },
+            {
+              "candidateId": "lula",
+              "weight": 0.65
+            }
+          ]
+        },
+        {
+          "id": "neutral",
+          "text": "Não sei / Não tenho opinião",
+          "matches": []
+        }
+      ],
+      "sources": [
+        {
+          "candidateId": "renan-santos",
+          "document": "RENAN SANTOS.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "samara-martins",
+          "document": "SAMARA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "lula",
+          "document": "LULA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "hertz-dias",
+          "document": "HERTZ DIAS.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "flavio-bolsonaro",
+          "document": "FLAVIO BOLSONARO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "wilson-grassi",
+          "document": "VETERINÁRIO WILSON GRASSI.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "ronaldo-caiado",
+          "document": "RONALDO CAIADO.pdf",
+          "page": null
+        }
+      ]
+    },
+    {
+      "id": "q39_animal_protection",
+      "category": "culture",
+      "subaxis": "animal_protection",
+      "level": "complete",
+      "weight": 1.3,
+      "question": "Qual deveria ser a prioridade federal em proteção animal?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Integrar fiscalização de maus-tratos, vacinação, controle de zoonoses e defesa civil em uma política nacional de Saúde Única.",
+          "matches": [
+            {
+              "candidateId": "wilson-grassi",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Focar principalmente em fiscalização ambiental e proteção da fauna dentro das políticas ambientais gerais.",
+          "matches": []
+        },
+        {
+          "id": "c",
+          "text": "Priorizar políticas municipais de manejo populacional, castração e saúde animal com apoio federal.",
+          "matches": [
+            {
+              "candidateId": "wilson-grassi",
+              "weight": 0.8
+            }
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Não considero necessário criar um eixo federal específico além das políticas atuais.",
+          "matches": []
+        },
+        {
+          "id": "neutral",
+          "text": "Não sei / Não tenho opinião",
+          "matches": []
+        }
+      ],
+      "sources": [
+        {
+          "candidateId": "wilson-grassi",
+          "document": "VETERINÁRIO WILSON GRASSI.pdf",
+          "page": null
+        }
+      ]
+    },
+    {
+      "id": "q40_space_industry",
+      "category": "technology",
+      "subaxis": "space_and_frontier_tech",
+      "level": "complete",
+      "weight": 1.3,
+      "question": "Que papel o Estado deveria ter em tecnologias estratégicas de fronteira?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Investir diretamente em semicondutores, IA, satélites, indústria espacial e tecnologias avançadas como estratégia nacional.",
+          "matches": [
+            {
+              "candidateId": "ronaldo-caiado",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "lula",
+              "weight": 0.8
+            },
+            {
+              "candidateId": "augusto-cury",
+              "weight": 0.8
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Criar ambiente favorável e usar compras públicas e incentivos para induzir inovação privada.",
+          "matches": [
+            {
+              "candidateId": "flavio-bolsonaro",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "romeu-zema",
+              "weight": 0.8
+            },
+            {
+              "candidateId": "wilson-grassi",
+              "weight": 0.7
+            }
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Colocar tecnologias estratégicas e infraestrutura digital sob controle público ou dos trabalhadores.",
+          "matches": [
+            {
+              "candidateId": "hertz-dias",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "edmilson-costa",
+              "weight": 0.9
+            },
+            {
+              "candidateId": "samara-martins",
+              "weight": 0.85
+            }
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Priorizar integração com cadeias internacionais estratégicas e atração de capital externo para desenvolver capacidade nacional.",
+          "matches": [
+            {
+              "candidateId": "renan-santos",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "romeu-zema",
+              "weight": 0.75
+            }
+          ]
+        },
+        {
+          "id": "neutral",
+          "text": "Não sei / Não tenho opinião",
+          "matches": []
+        }
+      ],
+      "sources": [
+        {
+          "candidateId": "ronaldo-caiado",
+          "document": "RONALDO CAIADO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "lula",
+          "document": "LULA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "augusto-cury",
+          "document": "ESCRITOR AUGUSTO CURY.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "flavio-bolsonaro",
+          "document": "FLAVIO BOLSONARO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "romeu-zema",
+          "document": "ZEMA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "wilson-grassi",
+          "document": "VETERINÁRIO WILSON GRASSI.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "hertz-dias",
+          "document": "HERTZ DIAS.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "edmilson-costa",
+          "document": "EDMILSON COSTA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "samara-martins",
+          "document": "SAMARA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "renan-santos",
+          "document": "RENAN SANTOS.pdf",
+          "page": null
+        }
+      ]
+    },
+    {
+      "id": "q41_trade",
+      "category": "foreign_policy",
+      "subaxis": "trade_model",
+      "level": "complete",
+      "weight": 1.3,
+      "question": "Como o Brasil deveria se integrar ao comércio internacional?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Aprofundar integração regional e diversificar parceiros mantendo autonomia estratégica.",
+          "matches": [
+            {
+              "candidateId": "lula",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "ronaldo-caiado",
+              "weight": 0.8
+            },
+            {
+              "candidateId": "renan-santos",
+              "weight": 0.75
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Ampliar livre comércio, flexibilizar o Mercosul e reduzir tarifas de importação.",
+          "matches": [
+            {
+              "candidateId": "romeu-zema",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Usar política comercial ativa para abrir mercados, atrair investimento e promover exportações de maior valor agregado.",
+          "matches": [
+            {
+              "candidateId": "augusto-cury",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "flavio-bolsonaro",
+              "weight": 0.85
+            },
+            {
+              "candidateId": "ronaldo-caiado",
+              "weight": 0.85
+            },
+            {
+              "candidateId": "leonardo-avalanche",
+              "weight": 0.75
+            }
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Subordinar comércio e finanças à soberania econômica e reduzir dependência de grandes potências e capital estrangeiro.",
+          "matches": [
+            {
+              "candidateId": "edmilson-costa",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "hertz-dias",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "samara-martins",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "rui-costa-pimenta",
+              "weight": 1.0
+            }
+          ]
+        },
+        {
+          "id": "neutral",
+          "text": "Não sei / Não tenho opinião",
+          "matches": []
+        }
+      ],
+      "sources": [
+        {
+          "candidateId": "lula",
+          "document": "LULA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "ronaldo-caiado",
+          "document": "RONALDO CAIADO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "renan-santos",
+          "document": "RENAN SANTOS.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "romeu-zema",
+          "document": "ZEMA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "augusto-cury",
+          "document": "ESCRITOR AUGUSTO CURY.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "flavio-bolsonaro",
+          "document": "FLAVIO BOLSONARO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "leonardo-avalanche",
+          "document": "LEONARDO AVALANCHE.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "edmilson-costa",
+          "document": "EDMILSON COSTA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "hertz-dias",
+          "document": "HERTZ DIAS.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "samara-martins",
+          "document": "SAMARA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "rui-costa-pimenta",
+          "document": "RUI COSTA PIMENTA.pdf",
+          "page": null
+        }
+      ]
+    },
+    {
+      "id": "q42_research_university",
+      "category": "education",
+      "subaxis": "university_research",
+      "level": "complete",
+      "weight": 1.3,
+      "question": "Como universidades e pesquisa deveriam se relacionar com empresas e o desenvolvimento econômico?",
+      "options": [
+        {
+          "id": "a",
+          "text": "Aproximar universidades e empresas, estimular pesquisa aplicada, startups e centros privados de inovação dentro das universidades.",
+          "matches": [
+            {
+              "candidateId": "augusto-cury",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "romeu-zema",
+              "weight": 0.9
+            },
+            {
+              "candidateId": "flavio-bolsonaro",
+              "weight": 0.8
+            }
+          ]
+        },
+        {
+          "id": "b",
+          "text": "Fortalecer universidades e institutos públicos como motores de ciência, tecnologia e política industrial.",
+          "matches": [
+            {
+              "candidateId": "lula",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "ronaldo-caiado",
+              "weight": 0.85
+            },
+            {
+              "candidateId": "clariana-barao",
+              "weight": 0.7
+            }
+          ]
+        },
+        {
+          "id": "c",
+          "text": "Expandir ensino e pesquisa públicos sob maior controle social e dos trabalhadores, reduzindo mercantilização.",
+          "matches": [
+            {
+              "candidateId": "edmilson-costa",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "rui-costa-pimenta",
+              "weight": 0.95
+            },
+            {
+              "candidateId": "samara-martins",
+              "weight": 0.9
+            },
+            {
+              "candidateId": "hertz-dias",
+              "weight": 0.85
+            }
+          ]
+        },
+        {
+          "id": "d",
+          "text": "Priorizar bolsas e pesquisas com impacto científico mensurável ou aplicação prática para economia e mercado.",
+          "matches": [
+            {
+              "candidateId": "romeu-zema",
+              "weight": 1.0
+            },
+            {
+              "candidateId": "ronaldo-caiado",
+              "weight": 0.75
+            }
+          ]
+        },
+        {
+          "id": "neutral",
+          "text": "Não sei / Não tenho opinião",
+          "matches": []
+        }
+      ],
+      "sources": [
+        {
+          "candidateId": "augusto-cury",
+          "document": "ESCRITOR AUGUSTO CURY.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "romeu-zema",
+          "document": "ZEMA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "flavio-bolsonaro",
+          "document": "FLAVIO BOLSONARO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "lula",
+          "document": "LULA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "ronaldo-caiado",
+          "document": "RONALDO CAIADO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "clariana-barao",
+          "document": "CLARIANA BARAO.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "edmilson-costa",
+          "document": "EDMILSON COSTA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "rui-costa-pimenta",
+          "document": "RUI COSTA PIMENTA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "samara-martins",
+          "document": "SAMARA.pdf",
+          "page": null
+        },
+        {
+          "candidateId": "hertz-dias",
+          "document": "HERTZ DIAS.pdf",
+          "page": null
+        }
+      ]
+    }
+  ],
+  "audit": {
+    "questionCount": 42,
+    "questionsByLevel": {
+      "simple": 12,
+      "moderate": 15,
+      "complete": 15
+    },
+    "questionsByCategory": {
+      "economy": 3,
+      "taxes": 2,
+      "labor": 4,
+      "social_policy": 2,
+      "security": 6,
+      "health": 3,
+      "housing": 2,
+      "agriculture": 1,
+      "technology": 2,
+      "civil_rights": 3,
+      "democracy_and_institutions": 1,
+      "foreign_policy": 2,
+      "energy": 2,
+      "public_administration": 2,
+      "education": 2,
+      "infrastructure": 1,
+      "pensions": 1,
+      "environment": 1,
+      "public_transport": 1,
+      "culture": 1
+    },
+    "candidateCoverage": {
+      "augusto-cury": {
+        "questionsWithDocumentedMatch": 22,
+        "exactMatches": 9,
+        "weightedPresence": 21.79
+      },
+      "clariana-barao": {
+        "questionsWithDocumentedMatch": 17,
+        "exactMatches": 5,
+        "weightedPresence": 15.93
+      },
+      "edmilson-costa": {
+        "questionsWithDocumentedMatch": 30,
+        "exactMatches": 22,
+        "weightedPresence": 32.94
+      },
+      "flavio-bolsonaro": {
+        "questionsWithDocumentedMatch": 24,
+        "exactMatches": 9,
+        "weightedPresence": 23.98
+      },
+      "hertz-dias": {
+        "questionsWithDocumentedMatch": 35,
+        "exactMatches": 24,
+        "weightedPresence": 37.91
+      },
+      "leonardo-avalanche": {
+        "questionsWithDocumentedMatch": 9,
+        "exactMatches": 5,
+        "weightedPresence": 9.22
+      },
+      "lula": {
+        "questionsWithDocumentedMatch": 36,
+        "exactMatches": 20,
+        "weightedPresence": 37.87
+      },
+      "renan-santos": {
+        "questionsWithDocumentedMatch": 16,
+        "exactMatches": 8,
+        "weightedPresence": 16.68
+      },
+      "romeu-zema": {
+        "questionsWithDocumentedMatch": 31,
+        "exactMatches": 22,
+        "weightedPresence": 34.4
+      },
+      "ronaldo-caiado": {
+        "questionsWithDocumentedMatch": 25,
+        "exactMatches": 9,
+        "weightedPresence": 25.74
+      },
+      "rui-costa-pimenta": {
+        "questionsWithDocumentedMatch": 18,
+        "exactMatches": 12,
+        "weightedPresence": 19.73
+      },
+      "samara-martins": {
+        "questionsWithDocumentedMatch": 34,
+        "exactMatches": 13,
+        "weightedPresence": 34.55
+      },
+      "wilson-grassi": {
+        "questionsWithDocumentedMatch": 20,
+        "exactMatches": 13,
+        "weightedPresence": 21.5
+      }
+    },
+    "notes": [
+      "Algumas alternativas deliberadamente não possuem candidatos associados porque nenhum dos planos analisados sustentou aquela posição.",
+      "imageUrl usa placeholder de bucket S3 e deve ser substituído pelo domínio/bucket real.",
+      "party e partyNumber permanecem null onde esses dados não foram preenchidos com segurança na primeira curadoria.",
+      "sources.page permanece null quando a página exata não foi preservada na curadoria inicial."
+    ]
+  }
+}

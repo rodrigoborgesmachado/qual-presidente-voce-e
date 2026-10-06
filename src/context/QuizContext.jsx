@@ -1,0 +1,111 @@
+import { createContext, useContext, useState } from "react";
+import data from "../data/quiz.json";
+import { selectQuestions } from "../utils/selectQuestions";
+import { NEUTRAL_OPTION } from "../utils/calculateResult";
+
+const KEY = "qual-presidente-quiz-v1";
+const QuizContext = createContext(null);
+
+function restore() {
+  try {
+    const stored = JSON.parse(sessionStorage.getItem(KEY));
+    if (
+      !stored ||
+      stored.version !== data.version ||
+      !data.quizModes[stored.modeId] ||
+      !Array.isArray(stored.questionIds) ||
+      !stored.questionIds.length
+    )
+      return null;
+    const questions = stored.questionIds.map((id) =>
+      data.questions.find((question) => question.id === id),
+    );
+    if (
+      questions.some((question) => !question) ||
+      new Set(stored.questionIds).size !== questions.length
+    )
+      return null;
+    if (
+      !Number.isInteger(stored.index) ||
+      stored.index < 0 ||
+      stored.index >= questions.length ||
+      !stored.answers ||
+      typeof stored.answers !== "object"
+    )
+      return null;
+    for (const question of questions) {
+      // Preserve answers saved before neutral options came exclusively from JSON.
+      if (stored.answers[question.id] === "__neutral__") {
+        stored.answers[question.id] = NEUTRAL_OPTION;
+      }
+      const answer = stored.answers[question.id];
+      if (
+        answer !== undefined &&
+        !question.options.some((option) => option.id === answer)
+      )
+        return null;
+    }
+    if (
+      stored.completed &&
+      questions.some((question) => stored.answers[question.id] === undefined)
+    )
+      return null;
+    return stored;
+  } catch {
+    return null;
+  }
+}
+
+export function QuizProvider({ children }) {
+  const [session, setSession] = useState(restore);
+  const [storageUnavailable, setStorageUnavailable] = useState(false);
+  function save(next) {
+    setSession(next);
+    try {
+      if (next) sessionStorage.setItem(KEY, JSON.stringify(next));
+      else sessionStorage.removeItem(KEY);
+      setStorageUnavailable(false);
+    } catch {
+      setStorageUnavailable(true);
+    }
+  }
+  function start(modeId) {
+    const questions = selectQuestions(data.questions, data.quizModes[modeId]);
+    if (!questions.length) return false;
+    save({
+      version: data.version,
+      modeId,
+      questionIds: questions.map((question) => question.id),
+      answers: {},
+      index: 0,
+      completed: false,
+    });
+    return true;
+  }
+  const questions =
+    session?.questionIds.map((id) =>
+      data.questions.find((question) => question.id === id),
+    ) ?? [];
+  return (
+    <QuizContext.Provider
+      value={{
+        data,
+        session,
+        questions,
+        storageUnavailable,
+        start,
+        reset: () => save(null),
+        answer: (id, optionId) =>
+          save({ ...session, answers: { ...session.answers, [id]: optionId } }),
+        go: (index) => save({ ...session, index }),
+        finish: () => save({ ...session, completed: true }),
+      }}
+    >
+      {children}
+    </QuizContext.Provider>
+  );
+}
+
+export function useQuiz() {
+  return useContext(QuizContext);
+}
