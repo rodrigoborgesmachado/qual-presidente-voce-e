@@ -4,7 +4,7 @@ import { useQuiz } from "../context/QuizContext";
 import { company } from "../data/company";
 
 export default function Layout() {
-  const { data, storageUnavailable } = useQuiz();
+  const { data, storageUnavailable, historyUnavailable } = useQuiz();
   const { pathname } = useLocation();
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -28,9 +28,16 @@ export default function Layout() {
             qual presidente<span className="brand-sub">é você?</span>
           </span>
         </Link>
-        <span className="edition">
-          <span className="status-dot" /> ELEIÇÕES {data.election.year}
-        </span>
+        <div className="header-actions">
+          {pathname === "/" && (
+            <Link className="history-home-link" to="/resultados-anteriores">
+              Resultados anteriores
+            </Link>
+          )}
+          <span className="edition">
+            <span className="status-dot" /> ELEIÇÕES {data.election.year}
+          </span>
+        </div>
       </header>
       {data.development && (
         <div className="demo-banner">
@@ -42,6 +49,12 @@ export default function Layout() {
         <p className="storage-warning" role="status">
           Seu navegador não permitiu salvar a sessão. As respostas serão
           mantidas apenas enquanto esta página estiver aberta.
+        </p>
+      )}
+      {historyUnavailable && pathname === "/resultado" && (
+        <p className="storage-warning" role="status">
+          Não foi possível salvar seu resultado no histórico deste navegador.
+          Ele ficará disponível apenas nesta sessão.
         </p>
       )}
       <main id="main-content" tabIndex={-1}>

@@ -180,9 +180,10 @@ export default function Home() {
             </summary>
             <p>
               O código do quiz calcula o resultado no navegador e salva o
-              andamento na sessão da aba. Não há cadastro ou envio das respostas
-              a uma API de resultados. O compartilhamento é opcional e não
-              inclui as respostas individuais.{" "}
+              andamento na sessão da aba e os resultados concluídos no histórico
+              deste navegador. Não há cadastro ou envio das respostas a uma API
+              de resultados. O compartilhamento é opcional e não inclui as
+              respostas individuais.{" "}
               <Link to="/privacidade">Leia a política de privacidade.</Link>
             </p>
           </details>

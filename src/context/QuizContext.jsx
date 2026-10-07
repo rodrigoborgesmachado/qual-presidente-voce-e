@@ -1,7 +1,13 @@
-import { createContext, useContext, useState } from "react";
+import { createContext, useContext, useState, useEffect } from "react";
 import data from "../data/quiz.json";
 import { selectQuestions } from "../utils/selectQuestions";
 import { NEUTRAL_OPTION } from "../utils/calculateResult";
+import {
+  HISTORY_KEY,
+  createHistoryRecord,
+  loadHistory,
+  writeHistory,
+} from "../utils/resultHistory";
 
 const KEY = "qual-presidente-quiz-v1";
 const QuizContext = createContext(null);
@@ -50,6 +56,7 @@ function restore() {
       questions.some((question) => stored.answers[question.id] === undefined)
     )
       return null;
+    stored.id ??= crypto.randomUUID();
     return stored;
   } catch {
     return null;
@@ -59,6 +66,7 @@ function restore() {
 export function QuizProvider({ children }) {
   const [session, setSession] = useState(restore);
   const [storageUnavailable, setStorageUnavailable] = useState(false);
+  const [historyState, setHistoryState] = useState(loadHistory);
   function save(next) {
     setSession(next);
     try {
@@ -73,6 +81,7 @@ export function QuizProvider({ children }) {
     const questions = selectQuestions(data.questions, data.quizModes[modeId]);
     if (!questions.length) return false;
     save({
+      id: crypto.randomUUID(),
       version: data.version,
       modeId,
       questionIds: questions.map((question) => question.id),
@@ -86,6 +95,51 @@ export function QuizProvider({ children }) {
     session?.questionIds.map((id) =>
       data.questions.find((question) => question.id === id),
     ) ?? [];
+  useEffect(() => {
+    if (!session?.completed || session.historySaved) return;
+    const completed = {
+      ...session,
+      completedAt: session.completedAt || new Date().toISOString(),
+      historySaved: true,
+    };
+    const record = createHistoryRecord(data, completed, questions);
+    const current = loadHistory();
+    const records = [
+      record,
+      ...current.records.filter((item) => item.id !== record.id),
+    ];
+    let unavailable = false;
+    try {
+      writeHistory(records);
+    } catch {
+      unavailable = true;
+    }
+    setHistoryState({ records, unavailable });
+    save(completed);
+  }, [session]);
+
+  useEffect(() => {
+    const refresh = (event) => {
+      if (event.key === HISTORY_KEY || event.key === null)
+        setHistoryState(loadHistory());
+    };
+    window.addEventListener("storage", refresh);
+    return () => window.removeEventListener("storage", refresh);
+  }, []);
+
+  function removeHistory(id) {
+    const records = id
+      ? historyState.records.filter((record) => record.id !== id)
+      : [];
+    try {
+      writeHistory(records);
+      setHistoryState({ records, unavailable: false });
+      return true;
+    } catch {
+      setHistoryState({ ...historyState, unavailable: true });
+      return false;
+    }
+  }
   return (
     <QuizContext.Provider
       value={{
@@ -93,12 +147,20 @@ export function QuizProvider({ children }) {
         session,
         questions,
         storageUnavailable,
+        history: historyState.records,
+        historyUnavailable: historyState.unavailable,
+        removeHistory,
         start,
         reset: () => save(null),
         answer: (id, optionId) =>
           save({ ...session, answers: { ...session.answers, [id]: optionId } }),
         go: (index) => save({ ...session, index }),
-        finish: () => save({ ...session, completed: true }),
+        finish: () =>
+          save({
+            ...session,
+            completed: true,
+            completedAt: new Date().toISOString(),
+          }),
       }}
     >
       {children}

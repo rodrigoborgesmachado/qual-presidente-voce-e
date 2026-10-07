@@ -163,8 +163,11 @@ export default function About() {
         <p>
           As respostas ficam na sessão da aba do navegador, para que você possa
           recarregar a página sem perder o andamento. Iniciar outro quiz
-          substitui essa sessão. Saiba mais na{" "}
-          <Link to="/privacidade">política de privacidade</Link>.
+          substitui essa sessão, mas preserva o histórico de resultados
+          concluídos neste navegador. Você pode consultar ou apagar esses
+          registros em{" "}
+          <Link to="/resultados-anteriores">Resultados anteriores</Link>. Saiba
+          mais na <Link to="/privacidade">política de privacidade</Link>.
         </p>
       </section>
       <section>

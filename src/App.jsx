@@ -8,6 +8,7 @@ import Result from "./pages/Result";
 import About from "./pages/About";
 import Privacy from "./pages/Privacy";
 import Contact from "./pages/Contact";
+import History from "./pages/History";
 
 export default function App() {
   return (
@@ -18,6 +19,7 @@ export default function App() {
           <Route path="modos" element={<QuizMode />} />
           <Route path="quiz" element={<Quiz />} />
           <Route path="resultado" element={<Result />} />
+          <Route path="resultados-anteriores" element={<History />} />
           <Route path="sobre" element={<About />} />
           <Route path="privacidade" element={<Privacy />} />
           <Route path="contato" element={<Contact />} />

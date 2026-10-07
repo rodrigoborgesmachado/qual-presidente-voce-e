@@ -14,7 +14,7 @@ export default function Privacy() {
       intro="Uma explicação do que acontece com suas respostas, quais recursos do navegador são usados e o que muda quando você abre um serviço externo."
     >
       <p className="policy-date">
-        Atualizada em 6 de outubro de 2026 · Aplicável a esta versão do projeto
+        Atualizada em 7 de outubro de 2026 · Aplicável a esta versão do projeto
       </p>
       <section>
         <h2>Sobre esta política</h2>
@@ -89,10 +89,45 @@ export default function Privacy() {
           {cleared
             ? storageUnavailable
               ? "A sessão em memória foi apagada, mas o navegador não permitiu remover o armazenamento. Use os controles de dados do site no navegador."
-              : "Sessão apagada. O andamento e o resultado anteriores foram removidos deste quiz."
+              : "Sessão atual apagada. O histórico de resultados permanece disponível e pode ser excluído separadamente."
             : !session
               ? "Não há uma sessão ativa do quiz nesta aba."
               : "Esta ação remove o andamento e o resultado desta aba."}
+        </p>
+      </section>
+      <section>
+        <h2>Histórico de resultados neste dispositivo</h2>
+        <p>
+          Ao concluir o quiz, a aplicação salva um resumo em{" "}
+          <code>localStorage</code>. Esse armazenamento permanece no navegador
+          após fechar a aba, até que você exclua o histórico ou limpe os dados
+          do site. Iniciar outro quiz e apagar a sessão atual não removem os
+          resultados anteriores.
+        </p>
+        <p>
+          O resumo contém data de conclusão, edição e versão da base, modo
+          escolhido, quantidade de respostas, nomes e informações de
+          apresentação dos candidatos, pontuações e percentuais gerais e por
+          tema. Os valores são preservados como eram na sessão, sem recalcular o
+          passado quando o conteúdo do projeto muda. As alternativas individuais
+          e o texto das perguntas não são salvos no histórico.
+        </p>
+        <p>
+          Você pode consultar e excluir cada registro ou limpar todos em{" "}
+          <Link to="/resultados-anteriores">Resultados anteriores</Link>. Não há
+          sincronização entre dispositivos nem envio desse histórico a um
+          servidor da aplicação. Quem utiliza o mesmo perfil do navegador neste
+          dispositivo pode acessar os registros: considere apagar o histórico ao
+          usar um computador compartilhado.
+        </p>
+        <p>
+          Se o navegador bloquear esse armazenamento ou não houver espaço
+          disponível, a aplicação informa a falha e mantém o resultado apenas em
+          memória enquanto a página estiver aberta. Alterar de navegador,
+          domínio ou perfil não transfere o histórico. Uma sessão já concluída
+          que ainda esteja aberta ao utilizar esta versão pode ser registrada
+          uma vez; se não houver data de conclusão anterior disponível, será
+          utilizada a data desse registro.
         </p>
       </section>
       <section>
@@ -100,8 +135,8 @@ export default function Privacy() {
         <p>
           O código atual do quiz não instala cookies de publicidade, não inclui
           ferramentas de análise de audiência e não cria identificadores de
-          rastreamento. O armazenamento de andamento descrito acima utiliza a
-          sessão do navegador, não um cookie de publicidade.
+          rastreamento. O andamento e o histórico utilizam armazenamento do
+          navegador, não cookies de publicidade.
         </p>
         <p>
           Esta descrição se refere à aplicação. Ela não significa que toda a

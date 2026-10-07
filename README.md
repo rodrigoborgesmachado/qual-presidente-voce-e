@@ -52,6 +52,10 @@ Os percentuais têm uma casa decimal, não precisam somar 100% e expressam apena
 
 ## Sessão e navegação
 
+Resultados concluídos são preservados em `localStorage`, na chave `qual-presidente-resultados-v1`, como JSON `{ version: 1, results: [...] }`. Cada registro guarda ID da sessão, data de conclusão, versão da base, edição, modo, contagem de respostas e uma cópia do ranking com os dados de apresentação e percentuais por tema. Não guarda respostas individuais. Os valores históricos não são recalculados após atualizar o quiz.
+
+A rota `/resultados-anteriores`, acessível pelo canto superior direito da home, permite consultar, excluir um registro ou limpar todos. Recarregar e abrir uma nova aba preservam o histórico no mesmo navegador e origem; refazer o quiz limpa somente a sessão atual. Um ID por sessão evita duplicações ao recarregar. Uma sessão concluída antiga pode ser incorporada uma vez ao carregar esta versão, com a data do registro quando a original não está disponível. Falhas de armazenamento são informadas, com resultado disponível em memória enquanto a página permanecer aberta.
+
 O contexto armazena IDs das perguntas, respostas, modo, posição e conclusão em `sessionStorage`. A sessão persiste ao recarregar na mesma aba. Um novo quiz substitui a sessão anterior, e “Refazer quiz” a limpa. Quando o navegador bloqueia o armazenamento, o quiz continua em memória e informa essa limitação.
 
 Sessões incompatíveis com a versão ou com os IDs atuais são descartadas. O resultado sem sessão leva à escolha de modo; uma sessão incompleta leva à pergunta atual. As perguntas mostram somente texto e categoria; associações e fontes aparecem apenas na explicação do resultado.
